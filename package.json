@@ -1,0 +1,15 @@
+{
+  "name": "kingscuprulemaker",
+  "version": "1.0.0",
+  "description": "Draw a king? Blanking out on a good rule? Get one here.",
+  "main": "index.js",
+  "scripts": {
+    "test": "karma run"
+  },
+  "repository": {
+    "type": "git",
+    "url": "~/Dropbox/Development/Git/kingscuprulemaker.git"
+  },
+  "author": "nick sullivan",
+  "license": "ISC"
+}
