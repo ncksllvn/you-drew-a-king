@@ -2,6 +2,7 @@ doctype html
 html
   head
     title= title
+    meta(name='viewport', content='width=device-width, initial-scale=1')
     link(rel='stylesheet', href='/build/styles/bundle.css')
     
   body
@@ -18,5 +19,6 @@ html
               a.pure-menu-link(href='/how-to-play') How to play
             li.pure-menu-item
               a.pure-menu-link(href='/feedback') Feedback
-      block content
+      #main
+        block content
     script(type="text/javascript", src="/javascripts/side-menu.js")
