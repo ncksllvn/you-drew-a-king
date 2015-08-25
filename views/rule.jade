@@ -4,9 +4,12 @@ block content
   .header
     h1= name
   .content
-    img.content-subhead.pure-img(src=image)
-    p= description
-    .pure-form
-      input(type='url', value=permalink, readonly='')
-      button.pure-button.pure-button-secondary(type='button') Share
-    a.pure-button.pure-button-primary(href='/rule') Get a different rule
+    img.block-center.pure-img(src=image)
+    p.text-center= description
+    .pure-form.pure-g
+      .pure-u-3-4
+        input.pure-u-23-24(type='url', value=permalink, readonly='')
+      .pure-u-1-4
+        button.pure-input-1.pure-button.pure-button-secondary(type='button') Share
+    .text-right
+      a.pure-button.pure-button-primary(href='/rule') Get a different rule

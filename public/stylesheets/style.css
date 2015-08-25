@@ -3,3 +3,43 @@
 	margin-left: auto;
 	margin-right: auto;
 }
+
+.block-center {
+	margin: 0 auto;
+}
+
+.text-center {
+	text-align: center;
+}
+
+.text-left {
+	text-align: left;
+}
+
+.text-right {
+	text-align: right;
+}
+
+.hero {
+	padding-top: 40px;
+	padding-bottom: 40px;
+	background-color: #ccc;
+	margin-top: 50px;
+}
+
+.hero .hero-titles, .hero .hero-cta {
+	max-width: 768px;
+	margin: 0 auto;
+	text-align: center;
+}
+ .hero .hero-titles h1 {
+	 font-size: 3em;
+ }
+ 
+ .hero .hero-titles h2 {
+	 font-weight: 200;
+ }
+ 
+ .hero .hero-cta .pure-button {
+	 font-size: 1.5em;
+ }
