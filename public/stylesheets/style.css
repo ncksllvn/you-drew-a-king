@@ -1,45 +1,85 @@
+body {
+	color: #333;
+}
+
 .header, .content {
-	max-width: 768px;
+	max-width: 568px;
 	margin-left: auto;
 	margin-right: auto;
 }
 
-.block-center {
-	margin: 0 auto;
+input[readonly] {
+	background: #fff;
 }
 
-.text-center {
-	text-align: center;
+.header {
+	border-bottom: none;
 }
 
-.text-left {
-	text-align: left;
+.pure-button {
+	border: 1px solid #333;
 }
-
-.text-right {
-	text-align: right;
-}
+	
+	.pure-button-primary, a.pure-button-primary {
+		background-color: #b45f06;
+	}
+	
+	.pure-button-secondary {
+		background-color: #085394;
+		color: #fff;
+	}
 
 .hero {
-	padding-top: 40px;
-	padding-bottom: 40px;
-	background-color: #ccc;
-	margin-top: 50px;
+	margin: 50px auto;
+	padding: 60px;
+	max-width: 768px;
+	background-color: #f9cb9c;
+	border: 1px solid #333;
 }
 
-.hero .hero-titles, .hero .hero-cta {
-	max-width: 768px;
+	.hero .hero-titles, .hero .hero-cta {
+		text-align: center;
+	}
+	
+		.hero .hero-titles h1 {
+			font-size: 3em;
+			line-height: initial;
+			margin-top: 0;
+		}
+		
+		.hero .hero-titles h2 {
+			font-weight: 200;
+		}
+		
+		.hero .hero-cta .pure-button {
+			font-size: 1.5em;
+		}
+		
+.kings-rule {
+	max-width: 475px;
 	margin: 0 auto;
-	text-align: center;
 }
- .hero .hero-titles h1 {
-	 font-size: 3em;
- }
- 
- .hero .hero-titles h2 {
-	 font-weight: 200;
- }
- 
- .hero .hero-cta .pure-button {
-	 font-size: 1.5em;
- }
+	
+	.kings-rule .image {
+		margin: 25px 0;
+		text-align: center;
+	}
+	
+		.kings-rule .image img {
+			height: 200px;
+			width: 200px;
+		}
+
+	.kings-rule .description {
+		line-height: 2.5em;
+		text-align: center;
+	}
+	
+	.kings-rule .description p {
+		margin-top: 0;
+	}
+	
+	.kings-rule .actions .different-rule {
+		margin-top: 10px;
+		text-align: right;
+	}
