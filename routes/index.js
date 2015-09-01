@@ -3,7 +3,7 @@ var router = express.Router();
 
 /* GET home page. */
 router.get('/', function(req, res, next) {
-  res.render('index', { title: 'Kings Cup Rule Maker' });
+  res.render('index', { title: 'King\'s Cup Rule Master' });
 });
 
 module.exports = router;

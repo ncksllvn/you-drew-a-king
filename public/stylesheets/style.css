@@ -1,9 +1,15 @@
+/* colors - https://coolors.co/252323-2e86ab-dd1a1a-f2d298-f5f1ed */
+
 body {
-	color: #000;
+	color: #252323;
 }
 
 h1, h2, h3, h4, h5, h6 {
 	font-weight: normal;
+}
+
+a {
+	color: #DE1A1A;
 }
 
 .header, .content {
@@ -17,27 +23,33 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .lead {
-	font-size: 1.5em;
+	float: left;
+	font-size: 6em;
+	padding: 24px 10px 10px 0;
 }
 
 .pure-form input[type="text"], input[type="text"] {
-	background: #fff;
+	background-color: #F5F1ED;
 	border-radius: 0;
 	box-shadow: none;
 	color: #000;
-	border-color: #000;
+	border-color: transparent;
 }
+
+	.pure-form input[type="text"]:focus, input[type="text"]:focus {
+		background-color: #fff;
+	}
 
 .pure-button {
 	border: 1px solid transparent;
 }
 	
 	.pure-button-primary, a.pure-button-primary {
-		background-color: #ff0000;
+		background-color: #DE1A1A;
 	}
 	
 	.pure-button-secondary {
-		background-color: #1485cc;
+		background-color: #2E86AB;
 		color: #fff;
 	}
 	
@@ -46,8 +58,9 @@ h1, h2, h3, h4, h5, h6 {
 	}
 
 .hero {
-	padding: 60px;
-	background-color: #FAEBD7;
+	padding: 60px 30px 30px;
+	margin: 50px 0 0;
+	background-color: #F2D398;
 }
 
 	.hero .hero-titles, .hero .hero-cta {
