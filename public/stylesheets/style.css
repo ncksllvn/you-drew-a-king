@@ -1,5 +1,9 @@
 body {
-	color: #333;
+	color: #000;
+}
+
+h1, h2, h3, h4, h5, h6 {
+	font-weight: normal;
 }
 
 .header, .content {
@@ -8,33 +12,42 @@ body {
 	margin-right: auto;
 }
 
-input[readonly] {
-	background: #fff;
-}
-
 .header {
 	border-bottom: none;
 }
 
+.lead {
+	font-size: 1.5em;
+}
+
+.pure-form input[type="text"], input[type="text"] {
+	background: #fff;
+	border-radius: 0;
+	box-shadow: none;
+	color: #000;
+	border-color: #000;
+}
+
 .pure-button {
-	border: 1px solid #333;
+	border: 1px solid transparent;
 }
 	
 	.pure-button-primary, a.pure-button-primary {
-		background-color: #b45f06;
+		background-color: #ff0000;
 	}
 	
 	.pure-button-secondary {
-		background-color: #085394;
+		background-color: #1485cc;
 		color: #fff;
+	}
+	
+	.pure-button-large {
+		font-size: 1.5em;
 	}
 
 .hero {
-	margin: 50px auto;
 	padding: 60px;
-	max-width: 768px;
-	background-color: #f9cb9c;
-	border: 1px solid #333;
+	background-color: #FAEBD7;
 }
 
 	.hero .hero-titles, .hero .hero-cta {
@@ -44,15 +57,11 @@ input[readonly] {
 		.hero .hero-titles h1 {
 			font-size: 3em;
 			line-height: initial;
-			margin-top: 0;
+			margin: 0;
 		}
 		
 		.hero .hero-titles h2 {
 			font-weight: 200;
-		}
-		
-		.hero .hero-cta .pure-button {
-			font-size: 1.5em;
 		}
 		
 .kings-rule {

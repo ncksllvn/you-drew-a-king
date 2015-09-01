@@ -2,7 +2,7 @@
 
     var layout   = document.getElementById('layout'),
         menu     = document.getElementById('menu'),
-        menuLink = document.getElementById('menuLink');
+        menuLink = document.getElementById('menu-link');
 
     function toggleClass(element, className) {
         var classes = element.className.split(/\s+/),
