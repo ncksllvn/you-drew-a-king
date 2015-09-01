@@ -59,8 +59,9 @@ a {
 
 .hero {
 	padding: 60px 30px 30px;
-	margin: 50px 0 0;
-	background-color: #F2D398;
+	margin: 50px 0;
+	background-color: #252323;
+	color: #fff;
 }
 
 	.hero .hero-titles, .hero .hero-cta {
@@ -75,6 +76,11 @@ a {
 		
 		.hero .hero-titles h2 {
 			font-weight: 200;
+		}
+		
+		.hero .hero-cta .pure-button {
+			background: #DE1A1A;
+			border-color: #fff;
 		}
 		
 .kings-rule {
