@@ -1,7 +1,14 @@
 /* colors - https://coolors.co/252323-2e86ab-dd1a1a-f2d298-f5f1ed */
 
+:root {
+  --primaryColor: #DE1A1A;
+	--infoColor: #2E86AB;
+	--darkColor: #252323;
+	--lightColor: #F5F1ED;
+}
+
 body {
-	color: #252323;
+	color: var(--darkColor);
 }
 
 h1, h2, h3, h4, h5, h6 {
@@ -9,7 +16,7 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 a {
-	color: #DE1A1A;
+	color: var(--primaryColor);
 }
 
 .header, .content {
@@ -29,7 +36,7 @@ a {
 }
 
 .pure-form input[type="text"], input[type="text"] {
-	background-color: #F5F1ED;
+	background-color: var(--lightColor);
 	border-radius: 0;
 	box-shadow: none;
 	color: #000;
@@ -43,16 +50,16 @@ a {
 .pure-button {
 	border: 1px solid transparent;
 }
-	
+
 	.pure-button-primary, a.pure-button-primary {
-		background-color: #DE1A1A;
+		background-color: var(--primaryColor);
 	}
-	
+
 	.pure-button-secondary {
-		background-color: #2E86AB;
+		background-color: var(--infoColor);
 		color: #fff;
 	}
-	
+
 	.pure-button-large {
 		font-size: 1.5em;
 	}
@@ -60,39 +67,38 @@ a {
 .hero {
 	padding: 60px 30px 30px;
 	margin: 50px 0;
-	background-color: #252323;
+	background-color: var(--darkColor);
 	color: #fff;
 }
 
 	.hero .hero-titles, .hero .hero-cta {
 		text-align: center;
 	}
-	
+
 		.hero .hero-titles h1 {
 			font-size: 3em;
 			line-height: initial;
 			margin: 0;
 		}
-		
+
 		.hero .hero-titles h2 {
 			font-weight: 200;
 		}
-		
+
 		.hero .hero-cta .pure-button {
-			background: #DE1A1A;
 			border-color: #fff;
 		}
-		
+
 .kings-rule {
 	max-width: 475px;
 	margin: 0 auto;
 }
-	
+
 	.kings-rule .image {
 		margin: 25px 0;
 		text-align: center;
 	}
-	
+
 		.kings-rule .image img {
 			height: 200px;
 			width: 200px;
@@ -102,11 +108,11 @@ a {
 		line-height: 2.5em;
 		text-align: center;
 	}
-	
+
 	.kings-rule .description p {
 		margin-top: 0;
 	}
-	
+
 	.kings-rule .actions .different-rule {
 		margin-top: 10px;
 		text-align: right;

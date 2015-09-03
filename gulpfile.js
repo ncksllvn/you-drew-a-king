@@ -1,8 +1,9 @@
 var gulp = require('gulp')
 var concatCss = require('gulp-concat-css')
+var cssnext = require("gulp-cssnext")
 
 gulp.task('default', function(){
-	
+
 })
 
 gulp.task('css', function(){
@@ -11,6 +12,7 @@ gulp.task('css', function(){
 				'public/stylesheets/*.css'
 			],{ base: '' })
 		.pipe(concatCss('styles/bundle.css'))
+		.pipe(cssnext({ compress: false }))
 		.pipe(gulp.dest('public/build/'))
 })
 
