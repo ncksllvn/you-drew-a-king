@@ -1,18 +1,27 @@
 /* colors - https://coolors.co/252323-2e86ab-dd1a1a-f2d298-f5f1ed */
 
+@import url(https://fonts.googleapis.com/css?family=Oswald);
+@import url(https://fonts.googleapis.com/css?family=Lato);
+
 :root {
-  --primaryColor: #DE1A1A;
+	--primaryColor: #EB011A;
 	--infoColor: #2E86AB;
-	--darkColor: #252323;
+	--darkColor: #00004B;
 	--lightColor: #F5F1ED;
+	--accentFont: 'Oswald', sans-serif;
+	--normalFont: 'Lato', sans-serif;
+	--sidebarWidth: 150px;
 }
 
 body {
+	font-size: 18px;
 	color: var(--darkColor);
+	font-family: var(--normalFont);
 }
 
 h1, h2, h3, h4, h5, h6 {
 	font-weight: normal;
+	font-family: var(--accentFont);
 }
 
 a {
@@ -27,6 +36,7 @@ a {
 
 .header {
 	border-bottom: none;
+	color: var(--darkColor);
 }
 
 .lead {
@@ -39,23 +49,32 @@ a {
 	background-color: var(--lightColor);
 	border-radius: 0;
 	box-shadow: none;
-	color: #000;
+	color: var(--darkColor);
 	border-color: transparent;
+	font-family: var(--accentFont);
 }
 
 	.pure-form input[type="text"]:focus, input[type="text"]:focus {
 		background-color: #fff;
 	}
 
-.pure-button {
+.pure-button, a.pure-button, button.pure-button, button[type="button"].pure-button {
 	border: 1px solid transparent;
+	text-transform: uppercase;
+	color: #fff;
+	font-family: var(--accentFont);
 }
+	
+	.pure-button:hover, .pure-button:focus {
+		opacity: 0.7;
+		background-image: none;
+	}
 
 	.pure-button-primary, a.pure-button-primary {
 		background-color: var(--primaryColor);
 	}
 
-	.pure-button-secondary {
+	.pure-button-secondary, a.pure-button-secondary {
 		background-color: var(--infoColor);
 		color: #fff;
 	}
@@ -65,10 +84,9 @@ a {
 	}
 
 .hero {
-	padding: 60px 30px 30px;
+	padding: 20px;
 	margin: 50px 0;
-	background-color: var(--darkColor);
-	color: #fff;
+	border: 3px solid var(--primaryColor);
 }
 
 	.hero .hero-titles, .hero .hero-cta {
@@ -78,16 +96,13 @@ a {
 		.hero .hero-titles h1 {
 			font-size: 3em;
 			line-height: initial;
-			margin: 0;
-		}
-
-		.hero .hero-titles h2 {
-			font-weight: 200;
 		}
 
 		.hero .hero-cta .pure-button {
-			border-color: #fff;
+			display: block;
+			width: 100%;
 		}
+
 
 .kings-rule {
 	max-width: 475px;

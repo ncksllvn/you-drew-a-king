@@ -24,12 +24,12 @@ This is the parent `<div>` that contains the menu and the content area.
     padding-left: 0;
 }
     #layout.active #menu {
-        left: 150px;
-        width: 150px;
+        left: var(--sidebarWidth);
+        width: var(--sidebarWidth);
     }
 
     #layout.active .menu-link {
-        left: 150px;
+        left: var(--sidebarWidth);
     }
 /*
 The content `<div>` is where all your content goes.
@@ -75,14 +75,15 @@ appears on the left side of the page.
 */
 
 #menu {
-    margin-left: -150px; /* "#menu" width */
-    width: 150px;
+    margin-left: -calc(var(--sidebarWidth)+3px); /* "#menu" width */
+    width: var(--sidebarWidth);
     position: fixed;
     top: 0;
     left: 0;
     bottom: 0;
     z-index: 1000; /* so the menu or its navicon stays above all content */
-    background: var(--darkColor);
+    background: #fff;
+    border-right: 3px solid var(--primaryColor);
     overflow-y: auto;
     -webkit-overflow-scrolling: touch;
 }
@@ -90,10 +91,13 @@ appears on the left side of the page.
     All anchors inside the menu should be styled like this.
     */
     #menu a {
-        color: #999;
+        text-transform: uppercase;
+        color: var(--primaryColor);
         border: none;
         padding: 0.6em 0 0.6em 0.6em;
-        border-bottom: #666;
+        border-bottom: 2px solid var(--primaryColor);
+        margin: 0 10px;
+        font-family: var(--accentFont);
     }
 
     /*
@@ -117,7 +121,7 @@ appears on the left side of the page.
         */
         #menu .pure-menu li a:hover,
         #menu .pure-menu li a:focus {
-            background: #333;
+            background: var(--lightColor);
         }
 
     /*
@@ -159,9 +163,10 @@ small screens.
     display: block; /* show this only on small screens */
     top: 0;
     left: 0; /* "#menu width" */
-    background: var(--darkColor);
+    background: var(--primaryColor);
     border: 1px solid #fff;
-    border-width: 0 1px 1px 0;
+    border-left: none;
+    border-top: none;
     font-size: 10px; /* change this value to increase/decrease button size */
     z-index: 10;
     width: 2em;
@@ -213,21 +218,21 @@ Hides the menu at `48em`, but modify this based on your app's needs.
     }
 
     #layout {
-        padding-left: 150px; /* left col width "#menu" */
+        padding-left: var(--sidebarWidth); /* left col width "#menu" */
         left: 0;
     }
     #menu {
-        left: 150px;
+        left: var(--sidebarWidth);
     }
 
     .menu-link {
         position: fixed;
-        left: 150px;
+        left: var(--sidebarWidth);
         display: none;
     }
 
     #layout.active .menu-link {
-        left: 150px;
+        left: var(--sidebarWidth);
     }
 }
 
@@ -240,6 +245,6 @@ Hides the menu at `48em`, but modify this based on your app's needs.
     */
     #layout.active {
         position: relative;
-        left: 150px;
+        left: var(--sidebarWidth);
     }
 }
