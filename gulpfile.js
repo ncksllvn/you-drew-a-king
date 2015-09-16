@@ -9,6 +9,7 @@ gulp.task('default', function(){
 gulp.task('css', function(){
 	return gulp.src([
 				'node_modules/purecss/build/pure.css',
+				'node_modules/purecss/build/grids-responsive.css',
 				'public/stylesheets/*.css'
 			],{ base: '' })
 		.pipe(concatCss('styles/bundle.css'))
