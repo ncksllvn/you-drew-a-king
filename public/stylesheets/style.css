@@ -5,7 +5,7 @@
 
 :root {
 	--primaryColor: #EB011A;
-	--secondaryColor: #00004B;
+	--secondaryColor: #000;
 	--accentColor: #95876D;
 	--lightColor: #EEE;
 	--darkColor: #000;
@@ -81,16 +81,12 @@ a {
 
 .hero {
 	margin: 50px 0;
-	border: 3px solid var(--primaryColor);
 }
 
 	.hero-inner {
-		border: 3px solid var(--accentColor);
 	}
 	
 	.hero .hero-cta {
-		border-top: 3px solid var(--accentColor);
-		padding-top: 5px;
 	}
 
 	.hero .hero-titles, .hero .hero-cta {
@@ -115,8 +111,6 @@ a {
 		}
 
 		.hero .hero-cta .pure-button {
-			display: block;
-			width: 100%;
 		}
 
 

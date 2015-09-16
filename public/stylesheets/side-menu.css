@@ -82,7 +82,7 @@ appears on the left side of the page.
     left: 0;
     bottom: 0;
     z-index: 1000; /* so the menu or its navicon stays above all content */
-    background: var(--primaryColor);
+    background: var(--darkColor);
     border-right: none;
     overflow-y: auto;
     -webkit-overflow-scrolling: touch;
@@ -163,7 +163,7 @@ small screens.
     display: block; /* show this only on small screens */
     top: 0;
     left: 0; /* "#menu width" */
-    background: color( var(--secondaryColor) alpha(90%));
+    background: color( var(--darkColor) alpha(70%));
     border: none;
     font-size: 10px; /* change this value to increase/decrease button size */
     z-index: 10;
@@ -174,7 +174,7 @@ small screens.
 
     .menu-link:hover,
     .menu-link:focus {
-        background: var(--primaryColor);
+        background: var(--darkColor);
     }
 
     .menu-link span {
