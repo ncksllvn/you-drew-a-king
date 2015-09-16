@@ -32,6 +32,7 @@ a {
 	max-width: 568px;
 	margin-left: auto;
 	margin-right: auto;
+	padding: 0 1em;
 }
 
 .header {
@@ -39,11 +40,9 @@ a {
 	color: var(--darkColor);
 }
 
-.lead {
-	float: left;
-	font-size: 6em;
-	padding: 24px 10px 10px 0;
-}
+	.header h1 {
+		
+	}
 
 .pure-form input[type="text"], input[type="text"] {
 	background-color: var(--lightColor);
@@ -75,7 +74,7 @@ a {
 	}
 
 	.pure-button-secondary, a.pure-button-secondary {
-		background-color: var(--infoColor);
+		background-color: var(--darkColor);
 		color: #fff;
 	}
 
@@ -84,7 +83,7 @@ a {
 	}
 
 .hero {
-	padding: 20px;
+	padding: 10px;
 	margin: 50px 0;
 	border: 3px solid var(--primaryColor);
 }
@@ -132,3 +131,9 @@ a {
 		margin-top: 10px;
 		text-align: right;
 	}
+
+#footer {
+	padding: 0 0 20px 0;
+	text-align: center;
+	font-size: 0.8em;
+}

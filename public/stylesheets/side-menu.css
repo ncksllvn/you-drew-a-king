@@ -50,7 +50,6 @@ The content `<div>` is where all your content goes.
      border-bottom: 1px solid #eee;
  }
     .header h1 {
-        margin: 0.2em 0;
         font-size: 3em;
         font-weight: 300;
     }
@@ -75,15 +74,15 @@ appears on the left side of the page.
 */
 
 #menu {
-    margin-left: -calc(var(--sidebarWidth)+3px); /* "#menu" width */
+    margin-left: -var(--sidebarWidth); /* "#menu" width */
     width: var(--sidebarWidth);
     position: fixed;
     top: 0;
     left: 0;
     bottom: 0;
     z-index: 1000; /* so the menu or its navicon stays above all content */
-    background: #fff;
-    border-right: 3px solid var(--primaryColor);
+    background: var(--primaryColor);
+    border-right: none;
     overflow-y: auto;
     -webkit-overflow-scrolling: touch;
 }
@@ -92,10 +91,10 @@ appears on the left side of the page.
     */
     #menu a {
         text-transform: uppercase;
-        color: var(--primaryColor);
+        color: #FFF;
         border: none;
         padding: 0.6em 0 0.6em 0.6em;
-        border-bottom: 2px solid var(--primaryColor);
+        border-bottom: 2px solid #FFF;
         margin: 0 10px;
         font-family: var(--accentFont);
     }
@@ -121,7 +120,7 @@ appears on the left side of the page.
         */
         #menu .pure-menu li a:hover,
         #menu .pure-menu li a:focus {
-            background: var(--lightColor);
+            background: rgba(255, 255, 255, 0.3);
         }
 
     /*
@@ -164,19 +163,18 @@ small screens.
     top: 0;
     left: 0; /* "#menu width" */
     background: var(--primaryColor);
-    border: 1px solid #fff;
-    border-left: none;
-    border-top: none;
+    border: none;
     font-size: 10px; /* change this value to increase/decrease button size */
     z-index: 10;
     width: 2em;
     height: auto;
     padding: 2.1em 1.6em;
+    opacity: 0.7;
 }
 
     .menu-link:hover,
     .menu-link:focus {
-        /*background: #252323;*/
+        opacity: 1;
     }
 
     .menu-link span {
