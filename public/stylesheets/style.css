@@ -153,6 +153,7 @@ a {
 		color: #fff;
 		padding: 15px 10px; 
 		margin-bottom: 5px;
+		text-transform: uppercase;
 	}
 	
 	.card-key-item .card-key-description {
