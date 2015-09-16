@@ -41,10 +41,6 @@ a {
 	color: var(--darkColor);
 }
 
-	.header h1 {
-		
-	}
-
 .pure-form input[type="text"], input[type="text"] {
 	background-color: var(--lightColor);
 	border-radius: 0;
@@ -130,7 +126,6 @@ a {
 }
 
 	.kings-rule .image {
-		margin: 25px 0;
 		text-align: center;
 	}
 
@@ -138,8 +133,14 @@ a {
 			height: 200px;
 			width: 200px;
 		}
+		
+		.kings-rule .image .no-image {
+			font-size: 9em;
+			line-height: initial;
+		}
 
 	.kings-rule .description {
+		margin: 25px 0;
 		line-height: 2.5em;
 		text-align: center;
 	}
@@ -148,6 +149,8 @@ a {
 		margin-top: 10px;
 		text-align: right;
 	}
+	
+	
 
 #footer {
 	padding: 0 0 20px 0;

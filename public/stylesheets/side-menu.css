@@ -52,6 +52,7 @@ The content `<div>` is where all your content goes.
     .header h1 {
         font-size: 3em;
         font-weight: 300;
+        margin-bottom: 25px;
     }
      .header h2 {
         font-weight: 300;
@@ -81,7 +82,7 @@ appears on the left side of the page.
     left: 0;
     bottom: 0;
     z-index: 1000; /* so the menu or its navicon stays above all content */
-    background: var(--secondaryColor);
+    background: var(--primaryColor);
     border-right: none;
     overflow-y: auto;
     -webkit-overflow-scrolling: touch;
@@ -113,7 +114,7 @@ appears on the left side of the page.
     */
     #menu .pure-menu ul,
     #menu .pure-menu .menu-item-divided {
-        border-top: 1px solid #333;
+        /*border-top: 1px solid #333;*/
     }
         /*
         Change color of the anchor links on hover/focus.
@@ -162,19 +163,18 @@ small screens.
     display: block; /* show this only on small screens */
     top: 0;
     left: 0; /* "#menu width" */
-    background: var(--secondaryColor);
+    background: color( var(--secondaryColor) alpha(90%));
     border: none;
     font-size: 10px; /* change this value to increase/decrease button size */
     z-index: 10;
     width: 2em;
     height: auto;
     padding: 2.1em 1.6em;
-    opacity: 0.7;
 }
 
     .menu-link:hover,
     .menu-link:focus {
-        opacity: 1;
+        background: var(--primaryColor);
     }
 
     .menu-link span {
@@ -199,6 +199,26 @@ small screens.
 
         .menu-link span:after {
             margin-top: 0.6em;
+        }
+        
+    .menu-link.active span {
+        background: transparent;
+    }
+    
+        .menu-link.active span:before {
+            -webkit-transform: rotate(45deg) translate(.5em, .4em);
+            -moz-transform: rotate(45deg) translate(.5em, .4em);
+            -ms-transform: rotate(45deg) translate(.5em, .4em);
+            -o-transform: rotate(45deg) translate(.5em, .4em);
+            transform: rotate(45deg) translate(.5em, .4em);
+        }
+        
+        .menu-link.active span:after {
+            -webkit-transform: rotate(-45deg) translate(.4em, -.3em);
+            -moz-transform: rotate(-45deg) translate(.4em, -.3em);
+            -ms-transform: rotate(-45deg) translate(.4em, -.3em);
+            -o-transform: rotate(-45deg) translate(.4em, -.3em);
+            transform: rotate(-45deg) translate(.4em, -.3em);
         }
 
 

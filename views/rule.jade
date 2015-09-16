@@ -6,7 +6,11 @@ block content
   .content
     .kings-rule
       .image
-        img(src=image)
+        if image
+          img(src=image)
+        else
+          .no-image 
+            span ?
       .description
         p= description
       .actions
