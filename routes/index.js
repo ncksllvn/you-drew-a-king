@@ -1,9 +1,13 @@
-var express = require('express');
-var router = express.Router();
+var express = require('express')
+var router = express.Router()
 
 /* GET home page. */
-router.get('/', function(req, res, next) {
-  res.render('index', { title: 'King\'s Cup Rule Master' });
+router.get('/', (req, res, next) => {
+  res.render('index', { title: 'King\'s Cup Rule Master' })
 });
 
-module.exports = router;
+router.get('/how-to-play', (req, res, next) => {
+  res.render('how-to-play')
+})
+
+module.exports = router
