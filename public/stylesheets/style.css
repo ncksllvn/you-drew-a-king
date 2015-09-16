@@ -5,9 +5,10 @@
 
 :root {
 	--primaryColor: #EB011A;
-	--infoColor: #2E86AB;
-	--darkColor: #00004B;
-	--lightColor: #F5F1ED;
+	--secondaryColor: #00004B;
+	--accentColor: #95876D;
+	--lightColor: #EEE;
+	--darkColor: #000;
 	--accentFont: 'Oswald', sans-serif;
 	--normalFont: 'Lato', sans-serif;
 	--sidebarWidth: 150px;
@@ -48,7 +49,7 @@ a {
 	background-color: var(--lightColor);
 	border-radius: 0;
 	box-shadow: none;
-	color: var(--darkColor);
+	color: inherit;
 	border-color: transparent;
 	font-family: var(--accentFont);
 }
@@ -74,7 +75,7 @@ a {
 	}
 
 	.pure-button-secondary, a.pure-button-secondary {
-		background-color: var(--darkColor);
+		background-color: var(--secondaryColor);
 		color: #fff;
 	}
 
@@ -83,18 +84,38 @@ a {
 	}
 
 .hero {
-	padding: 10px;
 	margin: 50px 0;
 	border: 3px solid var(--primaryColor);
 }
 
-	.hero .hero-titles, .hero .hero-cta {
-		text-align: center;
+	.hero-inner {
+		border: 3px solid var(--accentColor);
+	}
+	
+	.hero .hero-cta {
+		border-top: 3px solid var(--accentColor);
+		padding-top: 5px;
 	}
 
-		.hero .hero-titles h1 {
+	.hero .hero-titles, .hero .hero-cta {
+		text-align: center;
+		padding: 10px;
+	}
+	
+	.hero .hero-titles {
+		padding-bottom: 0;
+	}
+
+		.hero .hero-titles .title {
+			color: var(--secondaryColor);
 			font-size: 3em;
 			line-height: initial;
+			text-transform: uppercase;
+		}
+		
+		.hero .hero-titles .subtitle {
+			color: var(--primaryColor);
+			font-size: 2em;
 		}
 
 		.hero .hero-cta .pure-button {
