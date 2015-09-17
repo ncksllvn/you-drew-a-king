@@ -2,8 +2,6 @@
 
 module.exports = {
   up: function (queryInterface, Sequelize) {
-    
-    
     /*
       Add altering commands here.
       Return a promise to correctly handle asynchronicity.
