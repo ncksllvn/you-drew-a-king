@@ -1,9 +1,10 @@
 {
   "development": {
     "username": "nicksullivan",
-    "password": null,
+    "password": "password",
     "database": "youdrewaking",
     "host": "127.0.0.1",
+    "port": "5433",
     "dialect": "postgresql"
   },
   "test": {
