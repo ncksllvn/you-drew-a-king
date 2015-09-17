@@ -20,6 +20,7 @@
     "pg-hstore": "^2.3.2",
     "purecss": "^0.6.0",
     "sequelize": "^3.8.0",
+    "sequelize-cli": "^1.9.1",
     "serve-favicon": "~2.3.0"
   }
 }
