@@ -3,6 +3,13 @@ html
   head
     title= title
     meta(name='viewport', content='width=device-width, initial-scale=1')
+    meta(name='og:title', content=title)
+    meta(name='twitter:title', content=title)
+    meta(name='og:image', content=image)
+    meta(name='twitter:image', content=image)
+    meta(name='og:description', content=description)
+    meta(name='twitter:description', content=description)
+    meta(name='description', content=description)
     link(rel='stylesheet', href='/build/styles/bundle.css')
     
   body
@@ -11,7 +18,6 @@ html
         span
       #menu
         .pure-menu
-          //a.pure-menu-heading(href='/') King's Cup Rule Master
           ul.pure-menu-list
             li.pure-menu-item
               a.pure-menu-link(href='/') Home
