@@ -3,26 +3,18 @@ var slug = require('slug')
 var router = express.Router()
 var { Rule } = require('../models')
 
-var renderRule = (req, res, rule) => {
-  
-  rule = rule.get({ plain: true })
-  
-  var ruleId = rule.id
-  var ruleTitle = slug(rule.title)
-  var permalink = req.protocol + '://' + req.get('host') + '/rule/' + ruleTitle + '/' + ruleId
-  var ruleWithPermalink = Object.assign({
-    permalink: permalink
-  }, rule)
-  
-  res.render('rule', ruleWithPermalink)
-  
-}
 
-/* GET random rule */
 router.get('/', (req, res, next) => {
   
   Rule.findRandom().then((rule) => {
-    renderRule(req, res, rule)
+    
+    res.render('rule', {
+      title: 'Get a Rule',
+      description: 'Get a funny or classic rule for when you draw a king and blank out.',
+      image: 'http://placehold.it/200x200',
+      rule: rule.getWithPermalink(req)
+    })
+    
   })
   
 })
@@ -32,7 +24,12 @@ router.get('/:title/:id', (req, res, next) => {
   var ruleId = req.params.id
   
   Rule.findById(ruleId).then((rule) => {
-    renderRule(req, res, rule)
+    
+    var data = rule.get({ plain: true })
+    data.rule = rule.getWithPermalink(req)
+    
+    res.render('rule', data)
+    
   })
   
 })
