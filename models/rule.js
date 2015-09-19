@@ -6,8 +6,15 @@ module.exports = function(sequelize, DataTypes) {
     image: DataTypes.STRING
   }, {
     classMethods: {
-      associate: function(models) {
+      associate: (models) => {
         // associations can be defined here
+      },
+      findRandom: () => {
+        return Rule.findOne({
+          order: [
+            [sequelize.fn('RANDOM')]
+          ]
+        })
       }
     }
   });
