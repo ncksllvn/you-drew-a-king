@@ -12,7 +12,7 @@ router.get('/', (req, res, next) => {
       title: 'Get a Rule',
       description: 'Get a funny or classic rule for when you draw a king and blank out.',
       image: 'http://placehold.it/200x200',
-      rule: rule.getWithPermalink(req)
+      rule: rule.getWithShareLinks(req)
     })
     
   })
@@ -26,7 +26,7 @@ router.get('/:title/:id', (req, res, next) => {
   Rule.findById(ruleId).then((rule) => {
     
     var data = rule.get({ plain: true })
-    data.rule = rule.getWithPermalink(req)
+    data.rule = rule.getWithShareLinks(req)
     
     res.render('rule', data)
     
