@@ -29,6 +29,26 @@ a {
 	color: var(--primaryColor);
 }
 
+.l-box {
+	padding: 1em;
+}
+
+.pure-g.l-boxes {
+	margin: 0 -1em;
+}
+
+.fade {
+	max-height: 0;
+	opacity: 0;
+	transition: opacity 250ms, max-height 250ms;
+	overflow: hidden;
+}
+
+	.fade.in {
+		max-height: 500px;
+		opacity: 1;
+	}
+
 .header, .content {
 	max-width: 568px;
 	margin-left: auto;
@@ -160,6 +180,18 @@ a {
 		margin-top: 0;
 		padding: 0 5px;
 	}
+	
+.facebook {
+	background-color: #3a5795;
+}
+
+.twitter {
+	background-color: #55ACEE;
+}
+
+.reddit {
+	background-color: #CEE3F8
+}
 
 #footer {
 	padding: 0 0 20px 0;

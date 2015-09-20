@@ -20,6 +20,19 @@ block content
               .pure-u-16-24
                 input.pure-u-23-24(type='text', value=rule.permalink, readonly='')
               .pure-u-8-24
-                button.pure-u-1.pure-button.pure-button-secondary(type='button') Share
+                button.pure-u-1.pure-button.pure-button-secondary(type='button')#share-button Share
+            .pure-g.l-boxes.fade#share-options
+              .pure-u-1-3
+                .l-box
+                  a.pure-u-1.pure-button.facebook(href='/blah')
+                    span.fa.fa-facebook
+              .pure-u-1-3
+                .l-box
+                  a.pure-u-1.pure-button.twitter(href='/blah')
+                    span.fa.fa-twitter
+              .pure-u-1-3
+                .l-box
+                  a.pure-u-1.pure-button.reddit(href='/blah')
+                    span.fa.fa-reddit
         .different-rule
           a.pure-button.pure-button-primary(href='/rule') Get a different rule
