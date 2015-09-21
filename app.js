@@ -10,9 +10,7 @@ var rule = require('./routes/rule')
 
 var app = express()
 
-app.locals.siteTitle = 'You Drew A King.'
-app.locals.facebookAppId = '177455305922483'
-app.locals.googleAnalyticsId = 'UA-67867718-1'
+app.locals = Object.assign(app.locals, require('./constants/locals'))
 
 // view engine setup
 app.set('views', path.join(__dirname, 'views'))
