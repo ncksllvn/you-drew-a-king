@@ -16,7 +16,7 @@ module.exports = function(sequelize, DataTypes) {
     getterMethods: {
       
       uri: function() {
-        return '/rule/' + slug(this.title) + '/' + this.id
+        return '/' + slug(this.title) + '/' + this.id
       }
       
     },

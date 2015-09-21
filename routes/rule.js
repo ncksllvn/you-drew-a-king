@@ -4,7 +4,7 @@ var router = express.Router()
 var { Rule } = require('../models')
 
 
-router.get('/', (req, res, next) => {
+router.get('/rule', (req, res, next) => {
   
   Rule.findRandom().then((rule) => {
     
