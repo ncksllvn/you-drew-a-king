@@ -22,8 +22,22 @@
 	var shareLinks = document.getElementsByClassName('share-link')
 	var openShareWindow = function(event){
 		var href = this.getAttribute('href')
+		var isFacebookLink = this.getAttribute('class').indexOf('facebook') >= 0
 		
-		openPopup(href, null, 600, 325)
+		if (isFacebookLink)
+		{
+			FB.ui({
+				method: 'share',
+				href: href,
+			}, function(response){
+				
+			});
+		}
+		else
+		{
+			openPopup(href, null, 600, 325)
+		}
+		
 		event.preventDefault()
 		
 		return false
