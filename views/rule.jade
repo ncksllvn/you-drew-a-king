@@ -8,7 +8,7 @@ block content
     .kings-rule
       .image
         if rule.image
-          img(src=rule.image)
+          img(src=rule.image, alt=rule.title)
         else
           .no-image 
             span ?
@@ -20,31 +20,31 @@ block content
             .pure-g.l-boxes
               .pure-u-4-5
                 .l-box
-                  input.pure-u-1(type='text', value=rule.permalink, readonly='').permalink
+                  input.pure-u-1.permalink(type='text', name='Permalink', value=rule.permalink, readonly='')
               .pure-u-1-5
                 .l-box
-                  button.pure-u-1.pure-button.pure-button-secondary(type='button').clipboard
+                  button.pure-u-1.pure-button.pure-button-secondary.clipboard(type='button', title='Copy to Clipboard')
                     span.fa.fa-clipboard
             .pure-g.l-boxes.share-options
               .pure-u-1-5
                 .l-box
-                  a.pure-u-1.pure-button.share-link.facebook(href=rule.permalink)
+                  a.pure-u-1.pure-button.share-link.facebook(href=rule.permalink, title='Share with Facebook')
                     span.fa.fa-facebook
               .pure-u-1-5
                 .l-box
-                  a.pure-u-1.pure-button.share-link.twitter(href=rule.twitterShareUrl)
+                  a.pure-u-1.pure-button.share-link.twitter(href=rule.twitterShareUrl, title='Share with Twitter')
                     span.fa.fa-twitter
               .pure-u-1-5
                 .l-box
-                  a.pure-u-1.pure-button.share-link.tumblr(href=rule.tumblrShareUrl)
+                  a.pure-u-1.pure-button.share-link.tumblr(href=rule.tumblrShareUrl, title='Share with Tumblr')
                     span.fa.fa-tumblr
               .pure-u-1-5
                 .l-box
-                  a.pure-u-1.pure-button.share-link.pinterest(href=rule.pinterestShareUrl)
+                  a.pure-u-1.pure-button.share-link.pinterest(href=rule.pinterestShareUrl, title='Share with Pinterest')
                     span.fa.fa-pinterest
               .pure-u-1-5
                 .l-box
-                  a.pure-u-1.pure-button.email(href=rule.emailShareUrl)
+                  a.pure-u-1.pure-button.email(href=rule.emailShareUrl, title='Email to a Friend')
                     span.fa.fa-envelope
         .different-rule
           a.pure-button.pure-button-primary(href='/rule') Get a different rule 
