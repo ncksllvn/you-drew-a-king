@@ -19,7 +19,7 @@
 	--sidebarWidth: 200px;
 }
 
-body {
+body, .pure-g [class *= "pure-u"]  {
 	color: var(--darkColor);
 	font-family: var(--normalFont);
 }
@@ -38,7 +38,7 @@ a {
 }
 
 	.l-boxes .l-box {
-		padding: 0.5em;
+		padding: 0 0.5em;
 	}
 	
 	@media(--sm-viewport){
@@ -62,7 +62,7 @@ a {
 		opacity: 1;
 	}
 
-.header, .content, .footer {
+.header, .content, .footer, .search-active .search {
 	max-width: 568px;
 	margin-left: auto;
 	margin-right: auto;
@@ -85,20 +85,19 @@ a {
 		text-align: center;
 	}
 
-.pure-form input[type="text"], input[type="text"] {
+input[type="text"], input[type="search"], .pure-form input[type="text"], .pure-form input[type="search"] {
 	background-color: var(--lightColor);
 	border-radius: 0;
 	box-shadow: none;
 	color: inherit;
 	border-color: transparent;
-	font-family: var(--accentFont);
 }
 
-	.pure-form input[type="text"]:focus, input[type="text"]:focus {
+	.pure-form input[type="text"]:focus, input[type="text"]:focus, .pure-form input[type="search"]:focus, input[type="search"]:focus {
 		background-color: #fff;
 	}
 
-.pure-button, a.pure-button, button.pure-button, button[type="button"].pure-button {
+.pure-g [class *= "pure-u"] .pure-button, .pure-button {
 	border: 1px solid transparent;
 	text-transform: uppercase;
 	color: #fff;
@@ -200,6 +199,10 @@ a {
 	
 	.kings-rule .actions .share-options {
 		padding-top: 0.5em;
+	}
+	
+	.kings-rule .actions .permalink {
+		font-family: var(--accentFont);
 	}
 	
 .card-key-item {

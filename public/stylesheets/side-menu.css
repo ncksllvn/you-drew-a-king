@@ -90,7 +90,7 @@ appears on the left side of the page.
     /*
     All anchors inside the menu should be styled like this.
     */
-    #menu a {
+    #menu a, #menu .search {
         text-transform: uppercase;
         color: #FFF;
         border: none;
@@ -98,6 +98,13 @@ appears on the left side of the page.
         border-bottom: 2px solid #FFF;
         margin: 0 10px;
         font-family: var(--accentFont);
+    }
+    
+    #menu .search {
+        font-family: var(--normalFont);
+        padding-left: 0;
+        padding-right: 0;
+        color: var(--darkColor);
     }
 
     /*
