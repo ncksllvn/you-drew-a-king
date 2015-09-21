@@ -2,8 +2,6 @@
 	
 	var permalinkForm = document.getElementById('permalink-form')
 	
-	console.log(permalinkForm)
-	
 	if ( permalinkForm )
 	{
 		var permalinkInput = permalinkForm.getElementsByClassName('permalink')[0]
