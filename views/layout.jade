@@ -27,8 +27,7 @@ html
               a.pure-menu-link(href='/how-to-play') How to play
       #main
         block content
-      #footer
-        .inner 
-          | &copy; 2015 You Drew A King.
+      include ./partials/footer.jade
     include ./partials/google-analytics.jade
+    include ./partials/facebook-sdk.jade
     script(type="text/javascript", src="/build/js/bundle.js")
