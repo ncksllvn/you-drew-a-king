@@ -244,3 +244,11 @@ input[type="text"], input[type="search"], .pure-form input[type="text"], .pure-f
 
 .facebook-comments-container {
 }
+
+.search-result {
+	
+}
+
+.search-result .search-result-title {
+	text-align: center;
+}

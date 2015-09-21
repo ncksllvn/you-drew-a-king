@@ -46,6 +46,36 @@ module.exports = function(sequelize, DataTypes) {
       associate: (models) => {
         // associations can be defined here
       },
+      
+      searchByKeyword: (keyword) => {
+        
+        if (!keyword || keyword.length < 3)
+        {
+          return
+        }
+          
+        //keyword = sequelize.escape(keyword)
+          
+        return Rule.findAll({
+          where: {
+            $or: [
+              {
+                title: {
+                  $iLike: `%${keyword}%`
+                }
+              },
+              {
+                description: {
+                  $iLike: `%${keyword}%`
+                }
+              }
+            ]
+          },
+          limit: 10
+        })
+        
+      },
+      
       findRandom: (where) => {
         
         where = where || {}
