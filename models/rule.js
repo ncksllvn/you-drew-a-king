@@ -28,13 +28,14 @@ module.exports = function(sequelize, DataTypes) {
         var rule = this.get({ plain: true })
         var permalink = req.protocol + '://' + req.get('host') + rule.uri
         var encodedPermalink = encodeURIComponent(permalink)
+        var pinterestDescription = encodeURIComponent(rule.title + ' - ' + rule.description)
         
         return Object.assign({
-          facebookShareUrl: 'https://www.facebook.com/dialog/sharer.php?display=popup&href=' + encodedPermalink + '&app_id=' + facebookAppId,
-          twitterShareUrl: 'http://twitter.com/share?url=' + encodedPermalink,
-          tumblrShareUrl: 'http://www.tumblr.com/share/link?url=' + encodedPermalink,
-          pinterestShareUrl: 'http://pinterest.com/pin/create/button/?url=' + encodedPermalink + '&media=' + rule.image + '&description=' + rule.title + ' - ' + rule.description,
-          emailShareUrl: 'mailto:?subject=' + rule.title + '&body=' + permalink,
+          facebookShareUrl: `https://www.facebook.com/dialog/sharer.php?display=popup&href=${encodedPermalink}&app_id=${facebookAppId}`,
+          twitterShareUrl: `http://twitter.com/share?url=${encodedPermalink}`,
+          tumblrShareUrl: `http://www.tumblr.com/share/link?url=${encodedPermalink}`,
+          pinterestShareUrl: `http://pinterest.com/pin/create/button/?url=${encodedPermalink}&media=${rule.image}&description=${pinterestDescription}`,
+          emailShareUrl: `mailto:?subject=${rule.title}&body=${permalink}`,
           permalink: permalink
         }, rule) 
       }
