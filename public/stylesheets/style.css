@@ -193,6 +193,10 @@ a {
 	background-color: #34465D
 }
 
+.facebook-comments-container {
+	margin-top: 2em;
+}
+
 #footer {
 	padding: 0 0 20px 0;
 	text-align: center;
