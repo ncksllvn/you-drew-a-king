@@ -1,4 +1,5 @@
 var slug = require('slug')
+var { facebookAppId } = require('../constants/locals')
 
 module.exports = function(sequelize, DataTypes) {
   
@@ -28,7 +29,7 @@ module.exports = function(sequelize, DataTypes) {
         var permalink = req.protocol + '://' + req.get('host') + rule.uri
         
         return Object.assign({
-          facebookShareUrl: 'https://www.facebook.com/sharer/sharer.php?u=' + permalink,
+          facebookShareUrl: 'https://www.facebook.com/dialog/sharer.php?display=popup&href=' + encodeURIComponent(permalink) + '&app_id=' + facebookAppId,
           twitterShareUrl: 'http://twitter.com/share?url=' + permalink,
           tumblrShareUrl: 'http://www.tumblr.com/share/link?url=' + permalink,
           permalink: permalink
