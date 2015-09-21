@@ -49,17 +49,23 @@ a {
 		opacity: 1;
 	}
 
-.header, .content {
+.header, .content, .footer {
 	max-width: 568px;
 	margin-left: auto;
 	margin-right: auto;
 	padding: 0 1em;
 }
 
-.header {
-	border-bottom: none;
-	color: var(--darkColor);
-}
+	.header {
+		border-bottom: none;
+		color: var(--darkColor);
+	}
+	
+	.footer {
+		padding-bottom: 20px;
+		font-size: 11px;
+		text-align: center;
+	}
 
 .pure-form input[type="text"], input[type="text"] {
 	background-color: var(--lightColor);
@@ -135,7 +141,6 @@ a {
 
 
 .kings-rule {
-	max-width: 475px;
 	margin: 0 auto;
 }
 
@@ -195,10 +200,4 @@ a {
 
 .facebook-comments-container {
 	margin-top: 2em;
-}
-
-#footer {
-	padding: 0 0 20px 0;
-	text-align: center;
-	font-size: 11px;
 }
