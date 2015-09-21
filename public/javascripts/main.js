@@ -1,22 +1,30 @@
 (function(){
 	
-	var toggleShareOptionsBtn = document.getElementById('share-button')
-	var shareOptions = document.getElementById('share-options')
+	var permalinkForm = document.getElementById('permalink-form')
 	
-	if (toggleShareOptionsBtn)
+	console.log(permalinkForm)
+	
+	if ( permalinkForm )
 	{
-		toggleShareOptionsBtn.onclick = function(){
-			toggleClass(shareOptions, 'in')
-		}
-	}
-	
-	var permalinkInput = document.getElementById('permalink')
-	
-	if (permalinkInput)
-	{
+		var permalinkInput = permalinkForm.getElementsByClassName('permalink')[0]
+		
 		permalinkInput.onclick = function(){
 			this.setSelectionRange && this.setSelectionRange(0, this.value.length)
 		}
+		
+		var clipboardButton = permalinkForm.getElementsByClassName('clipboard')[0]
+		
+		clipboardButton.onclick = function(){
+			
+			permalinkInput.select()
+			
+			if ( document.queryCommandSupported('copy') )
+			{
+				document.execCommand('copy')
+			}
+			
+		}
+		
 	}
 	
 	var shareLinks = document.getElementsByClassName('share-link')

@@ -15,26 +15,38 @@ block content
         p= rule.description
       .actions
         .share
-          .pure-form
-            .pure-g
-              .pure-u-16-24
-                input.pure-u-23-24#permalink(type='text', value=rule.permalink, readonly='')
-              .pure-u-8-24
-                button.pure-u-1.pure-button.pure-button-secondary(type='button')#share-button Share
-            .pure-g.l-boxes.fade#share-options
-              .pure-u-1-3
+          .pure-form#permalink-form
+            .pure-g.l-boxes
+              .pure-u-4-5
+                .l-box
+                  input.pure-u-1(type='text', value=rule.permalink, readonly='').permalink
+              .pure-u-1-5
+                .l-box
+                  button.pure-u-1.pure-button.pure-button-secondary(type='button').clipboard
+                    span.fa.fa-clipboard
+            .pure-g.l-boxes.share-options
+              .pure-u-1-5
                 .l-box
                   a.pure-u-1.pure-button.share-link.facebook(href=rule.permalink)
                     span.fa.fa-facebook
-              .pure-u-1-3
+              .pure-u-1-5
                 .l-box
                   a.pure-u-1.pure-button.share-link.twitter(href=rule.twitterShareUrl)
                     span.fa.fa-twitter
-              .pure-u-1-3
+              .pure-u-1-5
                 .l-box
                   a.pure-u-1.pure-button.share-link.tumblr(href=rule.tumblrShareUrl)
                     span.fa.fa-tumblr
+              .pure-u-1-5
+                .l-box
+                  a.pure-u-1.pure-button.share-link.pinterest(href=rule.tumblrShareUrl)
+                    span.fa.fa-pinterest
+              .pure-u-1-5
+                .l-box
+                  a.pure-u-1.pure-button.share-link.email
+                    span.fa.fa-envelope
         .different-rule
-          a.pure-button.pure-button-primary(href='/rule') Get a different rule
+          a.pure-button.pure-button-primary(href='/rule') Get a different rule 
+            span.fa.fa-long-arrow-right.fa-shift
         .facebook-comments-container
           .fb-comments(data-href=rule.permalink, data-numposts=5, data-width='100%')
