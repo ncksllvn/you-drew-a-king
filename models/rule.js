@@ -46,8 +46,13 @@ module.exports = function(sequelize, DataTypes) {
       associate: (models) => {
         // associations can be defined here
       },
-      findRandom: () => {
+      findRandom: (where) => {
+        
+        where = where || {}
+        
         return Rule.findOne({
+          where: where,
+          limit: 1,
           order: [
             [sequelize.fn('RANDOM')]
           ]

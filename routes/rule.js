@@ -6,7 +6,14 @@ var { Rule } = require('../models')
 
 router.get('/rule', (req, res, next) => {
   
-  Rule.findRandom().then((rule) => {
+  var lastRuleId = req.query.last
+  var whereClause = lastRuleId && {
+    id: {
+      $ne: lastRuleId  
+    }
+  }
+  
+  Rule.findRandom(whereClause).then((rule) => {
     
     res.render('rule', {
       title: 'Get a Rule',

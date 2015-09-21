@@ -47,7 +47,7 @@ block content
                   a.pure-u-1.pure-button.email(href=rule.emailShareUrl, title='Email to a Friend')
                     span.fa.fa-envelope
         .different-rule
-          a.pure-button.pure-button-primary(href='/rule') Get a different rule 
+          a.pure-button.pure-button-primary(href='/rule?last=' + rule.id) Get a different rule 
             span.fa.fa-undo.fa-shift
         .facebook-comments-container
           .fb-comments(data-href=rule.permalink, data-numposts=5, data-width='100%')
