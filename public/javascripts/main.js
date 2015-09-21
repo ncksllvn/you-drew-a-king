@@ -15,7 +15,7 @@
 	if (permalinkInput)
 	{
 		permalinkInput.onclick = function(){
-			this.setSelectionRange(0, this.value.length)
+			this.setSelectionRange && this.setSelectionRange(0, this.value.length)
 		}
 	}
 	
