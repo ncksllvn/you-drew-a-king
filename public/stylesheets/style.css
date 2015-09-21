@@ -75,6 +75,11 @@ a {
 		color: var(--darkColor);
 	}
 	
+		.header h1 > a {
+			color: var(--darkColor);
+			text-decoration: none;
+		}
+	
 	.footer {
 		padding-bottom: 20px;
 		font-size: 11px;

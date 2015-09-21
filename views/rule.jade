@@ -2,7 +2,8 @@ extends layout
 
 block content
   .header
-    h1= rule.title
+    h1
+      a(href=rule.permalink)= rule.title
   .content
     .kings-rule
       .image
@@ -39,14 +40,14 @@ block content
                     span.fa.fa-tumblr
               .pure-u-1-5
                 .l-box
-                  a.pure-u-1.pure-button.share-link.pinterest(href=rule.tumblrShareUrl)
+                  a.pure-u-1.pure-button.share-link.pinterest(href=rule.pinterestShareUrl)
                     span.fa.fa-pinterest
               .pure-u-1-5
                 .l-box
-                  a.pure-u-1.pure-button.share-link.email
+                  a.pure-u-1.pure-button.email(href=rule.emailShareUrl)
                     span.fa.fa-envelope
         .different-rule
           a.pure-button.pure-button-primary(href='/rule') Get a different rule 
-            span.fa.fa-long-arrow-right.fa-shift
+            span.fa.fa-undo.fa-shift
         .facebook-comments-container
           .fb-comments(data-href=rule.permalink, data-numposts=5, data-width='100%')
