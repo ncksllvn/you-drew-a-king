@@ -43,9 +43,13 @@ a {
 	
 	@media(--sm-viewport){
 		
-		.l-boxes .l-box {
-			padding: 0 0.25em;		
+		.l-boxes {
+			margin: 0 -0.25em;
 		}
+		
+			.l-boxes .l-box {
+				padding: 0 0.25em;
+			}
 		
 	}
 
@@ -87,10 +91,15 @@ a {
 
 input[type="text"], input[type="search"], .pure-form input[type="text"], .pure-form input[type="search"] {
 	background-color: var(--lightColor);
-	border-radius: 0;
+	border-radius: 0 !important;
 	box-shadow: none;
 	color: inherit;
 	border-color: transparent;
+	placeholder: var(--lightColor);
+}
+
+input[type="text"]:before, input[type="search"]:before, input[type="text"]:after, input[type="search"]:after{
+	border-radius: 0;
 }
 
 	.pure-form input[type="text"]:focus, input[type="text"]:focus, .pure-form input[type="search"]:focus, input[type="search"]:focus {
@@ -245,10 +254,18 @@ input[type="text"], input[type="search"], .pure-form input[type="text"], .pure-f
 .facebook-comments-container {
 }
 
+
+/* =============  Search ============= */
+#search-submit {
+	margin-top: 0;
+	font-family: var(--normalFont);
+	background-color: #777;
+}
+
 .search-result {
 	
 }
 
-.search-result .search-result-title {
-	text-align: center;
-}
+	.search-result .search-result-title {
+		text-align: center;
+	}
