@@ -3,7 +3,14 @@
   ul.pure-menu-list
     li.pure-menu-item.menu-item-divideds.search
       form.pure-form(method='get', action='/search')
-        input.pure-u-1(type='search', name='q', placeholder='Search...')#search-input
+        .pure-g.l-boxes
+          .pure-u-18-24
+            .l-box
+              input.pure-u-1(type='text', name='q', placeholder='Search...')#search-input
+          .pure-u-6-24
+            .l-box
+              button.pure-button.pure-button-primary.pure-u-1(type='submit')#search-submit
+                span.fa.fa-search
     li.pure-menu-item
       a.pure-menu-link(href='/rule') Get a rule
     li.pure-menu-item
