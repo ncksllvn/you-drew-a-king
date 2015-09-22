@@ -35,6 +35,7 @@ module.exports = function(sequelize, DataTypes) {
           twitterShareUrl: `http://twitter.com/share?url=${encodedPermalink}`,
           tumblrShareUrl: `http://www.tumblr.com/share/link?url=${encodedPermalink}`,
           pinterestShareUrl: `http://pinterest.com/pin/create/button/?url=${encodedPermalink}&media=${rule.image}&description=${pinterestDescription}`,
+          redditShareUrl: `http://reddit.com/submit?url=${encodedPermalink}&title=${rule.title}`,
           emailShareUrl: `mailto:?subject=${rule.title}&body=${permalink}`,
           permalink: permalink
         }, rule) 
