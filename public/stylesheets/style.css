@@ -268,4 +268,5 @@ input[type="text"]:before, input[type="search"]:before, input[type="text"]:after
 
 	.search-result .search-result-title {
 		text-align: center;
+		line-height: normal;
 	}

@@ -2,11 +2,11 @@
   a.pure-menu-heading(href='/') You Drew A King.
   ul.pure-menu-list
     li.pure-menu-item.menu-item-divideds.search
-      form.pure-form(method='get', action='/search')
-        .pure-g.l-boxes
+      form.pure-form(method='get', action='/search', name='search')
+        .pure-g
           .pure-u-18-24
             .l-box
-              input.pure-u-1(type='text', name='q', placeholder='Search...')#search-input
+              input.pure-u-1(type='text', required='', name='q', placeholder='Search...')#search-input
           .pure-u-6-24
             .l-box
               button.pure-button.pure-button-primary.pure-u-1(type='submit')#search-submit
