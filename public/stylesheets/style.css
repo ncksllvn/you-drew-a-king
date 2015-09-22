@@ -88,6 +88,11 @@ a {
 		font-size: 11px;
 		text-align: center;
 	}
+	
+	.footer .facebook-info {
+		width: 300px;
+		margin: 0 auto;
+	}
 
 input[type="text"], input[type="search"], .pure-form input[type="text"], .pure-form input[type="search"] {
 	background-color: var(--lightColor);
