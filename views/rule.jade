@@ -16,15 +16,8 @@ block content
         p= rule.description
       .actions
         .share
-          .pure-form#permalink-form
-            .pure-g.l-boxes
-              .pure-u-4-5
-                .l-box
-                  input.pure-u-1.permalink(type='text', name='Permalink', value=rule.permalink, readonly='')
-              .pure-u-1-5
-                .l-box
-                  button.pure-u-1.pure-button.pure-button-secondary.clipboard(type='button', title='Copy to Clipboard')
-                    span.fa.fa-clipboard
+          .pure-form
+            input.pure-u-1.permalink(type='text', name='Permalink', value=rule.permalink, readonly='')
           .pure-g.l-boxes.share-options
             .pure-u-1-5
               .l-box

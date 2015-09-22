@@ -1,28 +1,12 @@
 (function(){
 	
-	var permalinkForm = document.getElementById('permalink-form')
+	var permalinkInput = document.getElementsByClassName('permalink')[0]
 	
-	if ( permalinkForm )
+	if (permalinkInput)
 	{
-		var permalinkInput = permalinkForm.getElementsByClassName('permalink')[0]
-		
 		permalinkInput.onclick = function(){
 			this.setSelectionRange && this.setSelectionRange(0, this.value.length)
 		}
-		
-		var clipboardButton = permalinkForm.getElementsByClassName('clipboard')[0]
-		
-		clipboardButton.onclick = function(){
-			
-			permalinkInput.select()
-			
-			if ( document.queryCommandSupported('copy') )
-			{
-				document.execCommand('copy')
-			}
-			
-		}
-		
 	}
 	
 	var shareLinks = document.getElementsByClassName('share-link')
