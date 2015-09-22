@@ -1,6 +1,7 @@
 var gulp = require('gulp')
 var concat = require('gulp-concat')
 var concatCss = require('gulp-concat-css')
+var autoprefixer = require('gulp-autoprefixer')
 var cssnext = require("gulp-cssnext")
 
 gulp.task('default', function(){
@@ -31,6 +32,9 @@ gulp.task('css', function(){
 			],{ base: '' })
 		.pipe(concatCss('styles/bundle.css', { rebaseUrls: false }))
 		.pipe(cssnext({ compress: false }))
+		.pipe(autoprefixer({
+			browsers: ['last 6 versions']
+		}))
 		.pipe(gulp.dest('public/build/'))
 })
 
