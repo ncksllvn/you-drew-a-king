@@ -9,7 +9,14 @@ module.exports = function(sequelize, DataTypes) {
     
     description: DataTypes.TEXT,
     
-    image: DataTypes.STRING
+    image: {
+      type: DataTypes.STRING,
+      get: function(){
+        var image = this.getDataValue('image')
+        
+        return image || '/images/question.png'
+      }
+    }
     
   }, {
     
@@ -26,7 +33,9 @@ module.exports = function(sequelize, DataTypes) {
       getWithShareLinks: function(req) {
         
         var rule = this.get({ plain: true })
-        var permalink = req.protocol + '://' + req.get('host') + rule.uri
+        var host = req.protocol + '://' + req.get('host')
+        var permalink = host + rule.uri
+        var image = host + this.image
         var encodedPermalink = encodeURIComponent(permalink)
         var pinterestDescription = encodeURIComponent(rule.title + ' - ' + rule.description)
         
@@ -34,7 +43,7 @@ module.exports = function(sequelize, DataTypes) {
           facebookShareUrl: `https://www.facebook.com/dialog/sharer.php?display=popup&href=${encodedPermalink}&app_id=${facebookAppId}`,
           twitterShareUrl: `http://twitter.com/share?url=${encodedPermalink}`,
           tumblrShareUrl: `http://www.tumblr.com/share/link?url=${encodedPermalink}`,
-          pinterestShareUrl: `http://pinterest.com/pin/create/button/?url=${encodedPermalink}&media=${rule.image}&description=${pinterestDescription}`,
+          pinterestShareUrl: `http://pinterest.com/pin/create/button/?url=${encodedPermalink}&media=${image}&description=${pinterestDescription}`,
           redditShareUrl: `http://reddit.com/submit?url=${encodedPermalink}&title=${rule.title}`,
           emailShareUrl: `mailto:?subject=${rule.title}&body=${permalink}`,
           permalink: permalink

@@ -7,11 +7,7 @@ block content
   .content
     .kings-rule
       .image
-        if rule.image
-          img(src=rule.image, alt=rule.title)
-        else
-          .no-image 
-            span.fa.fa-question-circle
+        img(src=rule.image, alt=rule.title)
       .description
         p !{rule.description}
       .actions
