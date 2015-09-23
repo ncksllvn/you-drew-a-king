@@ -3,9 +3,20 @@ var concat = require('gulp-concat')
 var concatCss = require('gulp-concat-css')
 var autoprefixer = require('gulp-autoprefixer')
 var cssnext = require("gulp-cssnext")
+var runSequence = require('run-sequence')
 
-gulp.task('default', function(){
-
+gulp.task('release', function(callback){
+	runSequence('js', 'css', 'fonts', function(error){
+		if (error)
+		{
+			console.log(error)	
+		}
+		else
+		{
+			console.log('SUCCESSFUL RELEASE')
+		}
+		callback(error)
+	})
 })
 
 gulp.task('js', function(){

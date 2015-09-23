@@ -3,6 +3,7 @@
   "version": "0.0.0",
   "private": true,
   "scripts": {
+    "preinstall": "gulp release",
     "start": "babel-node ./bin/www"
   },
   "dependencies": {
@@ -22,6 +23,7 @@
     "pg": "^4.4.1",
     "pg-hstore": "^2.3.2",
     "purecss": "^0.6.0",
+    "run-sequence": "^1.1.4",
     "sequelize": "^3.8.0",
     "sequelize-cli": "^1.9.1",
     "serve-favicon": "~2.3.0",
