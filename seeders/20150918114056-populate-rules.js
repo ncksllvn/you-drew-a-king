@@ -149,8 +149,8 @@ module.exports = {
       title: 'Manners',
       description: 'You can\'t just tell people what to do, you ignoramus. Before any player deals another  player a drink, they must look lovingly into their eyes, provide a compliment and politely ask them  to drink. If a player doesn\'t do so, they must drink instead of the chosen player.'
     }, {
-      title: 'The Freestyle',
-      description: 'Time to practice up your skills before you face Eminem. While a player is speaking, they must rhyme with themselves at least once. If a player speaks without rhyming, they must drunk'
+      title: 'The MC',
+      description: 'It\'s never too late to practice your freestyle. While a player is speaking, they must rhyme with themselves at least once. If a player speaks without rhyming, they must drink.'
     }, {
       title: 'The Kamikaze',
       description: 'If you\'re going down, you\'re taking someone else down with you. At any point during the game,  you may tell another player to drink. That player must drink, but so do you.'
