@@ -31,7 +31,7 @@ app.use('/search', search)
 
 // catch 404 and forward to error handler
 app.use((req, res, next) => {
-  var err = new Error('Not Found')
+  var err = new Error('Looks like you made a wrong turn.')
   err.status = 404
   next(err)
 })
@@ -42,22 +42,34 @@ app.use((req, res, next) => {
 // will print stacktrace
 if (app.get('env') === 'development') {
   app.use((err, req, res, next) => {
-    res.status(err.status || 500)
+    
+    var status = err.status || 500
+    
+    res.status(status)
+    
     res.render('error', {
       message: err.message,
+      status: status,
       error: err
     })
+    
   })
 }
 
 // production error handler
 // no stacktraces leaked to user
 app.use((err, req, res, next) => {
-  res.status(err.status || 500)
+  
+  var status = err.status || 500
+  
+  res.status(status)
+
   res.render('error', {
-    message: err.message,
+    message: 'You broke us! How could you?!',
+    status: status,
     error: {}
   })
+  
 })
 
 
