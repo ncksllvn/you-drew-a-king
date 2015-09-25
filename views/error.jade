@@ -2,7 +2,10 @@ extends layout
 
 block content
   .header
-    h1= error.message
+    h1= message
+    h2= status
   .content
-    pre #{error.stack}
-    img(class='pure-img', src='https://http.cat/' + status)
+    if stack
+      pre #{stack}
+    else
+      p We forgive you, but we hope it doesn't happen again.
