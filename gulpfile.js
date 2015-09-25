@@ -60,10 +60,10 @@ gulp.task('dist-fonts', ['fonts'], function(){
 			.pipe(gulp.dest('public/dist/fonts/'))
 })
 
-gulp.task('delete-src', function(){
+gulp.task('delete-src', ['compress-js', 'compress-css', 'dist-fonts'], function(){
 	return del(['public/build/**', 'public/javascripts/**', 'public/stylesheets/**'])
 })
 
-gulp.task('release', ['compress-js', 'compress-css', 'dist-fonts', 'delete-src'], function(){
+gulp.task('release', ['delete-src'], function(){
 	console.log('SUCCESSFUL RELEASE.')
 })
