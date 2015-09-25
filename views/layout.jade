@@ -10,7 +10,7 @@ html
     meta(name='og:description', content=description)
     meta(name='twitter:description', content=description)
     meta(name='description', content=description)
-    link(rel='stylesheet', href='/styles/bundle.css')
+    link(rel='stylesheet', href=buildDirectory + 'styles/bundle.css')
     
   body
     #layout
@@ -23,4 +23,4 @@ html
       include ./partials/footer.jade
     include ./partials/google-analytics.jade
     include ./partials/facebook-sdk.jade
-    script(type="text/javascript", src='/js/bundle.js')
+    script(type="text/javascript", src=buildDirectory + 'js/bundle.js')

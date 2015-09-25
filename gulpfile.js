@@ -4,6 +4,7 @@ var concatCss = require('gulp-concat-css')
 var autoprefixer = require('gulp-autoprefixer')
 var cssnext = require("gulp-cssnext")
 var uglify = require('gulp-uglify')
+var del = require('del')
 
 gulp.task('js', function(){
 	return gulp.src([
@@ -59,11 +60,10 @@ gulp.task('dist-fonts', ['fonts'], function(){
 			.pipe(gulp.dest('public/dist/fonts/'))
 })
 
-gulp.task('dist-images', function(){
-	return gulp.src('public/images/*')
-			.pipe(gulp.dest('public/dist/images/'))
+gulp.task('delete-src', function(){
+	return del(['public/build/**', 'public/javascripts/**', 'public/stylesheets/**'])
 })
 
-gulp.task('release', ['compress-js', 'compress-css', 'dist-fonts', 'dist-images'], function(){
+gulp.task('release', ['compress-js', 'compress-css', 'dist-fonts', 'delete-src'], function(){
 	console.log('SUCCESSFUL RELEASE.')
 })
