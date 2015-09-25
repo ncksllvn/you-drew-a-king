@@ -3,21 +3,7 @@ var concat = require('gulp-concat')
 var concatCss = require('gulp-concat-css')
 var autoprefixer = require('gulp-autoprefixer')
 var cssnext = require("gulp-cssnext")
-var runSequence = require('run-sequence')
-
-gulp.task('release', function(callback){
-	runSequence('js', 'css', 'fonts', function(error){
-		if (error)
-		{
-			console.log(error)	
-		}
-		else
-		{
-			console.log('SUCCESSFUL RELEASE')
-		}
-		callback(error)
-	})
-})
+var uglify = require('gulp-uglify')
 
 gulp.task('js', function(){
 	return gulp.src([
@@ -53,3 +39,19 @@ gulp.task('watch', function(){
 	gulp.watch('public/stylesheets/*.css', ['css'])
 	gulp.watch('public/javascripts/*.js', ['js'])
 })
+
+gulp.task('default', ['js', 'css', 'fonts'])
+
+gulp.task('compress-js', ['js'], function(){
+	return gulp.src('public/build/js/bundle.js')
+			.pipe(uglify())
+			.pipe(gulp.dest('public/build/dist/js/'))
+})
+
+gulp.task('compress-css', ['css'], function(){
+	return gulp.src('public/build/styles/bundle.css')
+			.pipe(cssnext({ compress: true }))
+			.pipe(gulp.dest('public/build/dist/styles/'))
+})
+
+gulp.task('release', ['compress-js', 'compress-css', 'fonts'])
