@@ -61,7 +61,7 @@ gulp.task('dist-fonts', ['fonts'], function(){
 })
 
 gulp.task('delete-src', function(){
-	return del(['public/build', 'public/javascripts', 'public/stylesheets'])
+	return del(['public/build/**', 'public/javascripts/**', 'public/stylesheets/**'])
 })
 
 gulp.task('release', ['compress-js', 'compress-css', 'dist-fonts', 'delete-src'], function(){
