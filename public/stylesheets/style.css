@@ -275,3 +275,7 @@ input[type="text"]:before, input[type="search"]:before, input[type="text"]:after
 		text-align: center;
 		line-height: normal;
 	}
+	
+.error-message {
+	text-align: center;
+}
