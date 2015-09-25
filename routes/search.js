@@ -10,8 +10,6 @@ router.get('/', (req, res, next) => {
 		return res.render('search', { rules: [], keyword: keyword })
 	}
 	
-	keyword = decodeURIComponent(keyword)
-	
 	Rule.searchByKeyword(keyword).then((rules)=>{
 		
 		res.render('search', { rules: rules, keyword: keyword })
