@@ -4,6 +4,7 @@ var concatCss = require('gulp-concat-css')
 var autoprefixer = require('gulp-autoprefixer')
 var cssnext = require("gulp-cssnext")
 var uglify = require('gulp-uglify')
+var del = require('del')
 
 gulp.task('js', function(){
 	return gulp.src([
@@ -29,9 +30,6 @@ gulp.task('css', function(){
 			],{ base: '' })
 		.pipe(concatCss('styles/bundle.css', { rebaseUrls: false }))
 		.pipe(cssnext({ compress: false }))
-		.pipe(autoprefixer({
-			browsers: ['last 6 versions']
-		}))
 		.pipe(gulp.dest('public/build/'))
 })
 
@@ -45,13 +43,27 @@ gulp.task('default', ['js', 'css', 'fonts'])
 gulp.task('compress-js', ['js'], function(){
 	return gulp.src('public/build/js/bundle.js')
 			.pipe(uglify())
-			.pipe(gulp.dest('public/build/dist/js/'))
+			.pipe(gulp.dest('public/dist/js/'))
 })
 
 gulp.task('compress-css', ['css'], function(){
 	return gulp.src('public/build/styles/bundle.css')
+			.pipe(autoprefixer({
+				browsers: ['last 2 versions']
+			}))
 			.pipe(cssnext({ compress: true }))
-			.pipe(gulp.dest('public/build/dist/styles/'))
+			.pipe(gulp.dest('public/dist/styles/'))
 })
 
-gulp.task('release', ['compress-js', 'compress-css', 'fonts'])
+gulp.task('dist-fonts', ['fonts'], function(){
+	return gulp.src('public/build/fonts/*')
+			.pipe(gulp.dest('public/dist/fonts/'))
+})
+
+gulp.task('delete-src', function(){
+	return del(['public/build', 'public/javascripts', 'public/stylesheets'])
+})
+
+gulp.task('release', ['compress-js', 'compress-css', 'dist-fonts', 'delete-src'], function(){
+	console.log('SUCCESSFUL RELEASE.')
+})
