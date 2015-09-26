@@ -94,13 +94,12 @@ a {
 		margin: 0 auto;
 	}
 
-input[type="text"], input[type="search"], .pure-form input[type="text"], .pure-form input[type="search"] {
-	background-color: var(--lightColor);
+textarea, input[type="text"], input[type="search"], .pure-form input[type="text"], .pure-form input[type="search"] {
+	background: none;
+	background-color: #fff;
 	border-radius: 0 !important;
-	box-shadow: none;
+	box-shadow: none !important;
 	color: inherit;
-	border-color: transparent;
-	placeholder: var(--lightColor);
 }
 
 input[type="text"]:before, input[type="search"]:before, input[type="text"]:after, input[type="search"]:after{
@@ -217,6 +216,7 @@ input[type="text"]:before, input[type="search"]:before, input[type="text"]:after
 	
 	.kings-rule .actions .permalink {
 		font-family: var(--accentFont);
+		background-color: var(--lightColor);
 	}
 	
 .card-key-item {

@@ -1,0 +1,22 @@
+extends layout
+
+block content
+	.header
+		h1 Suggestions
+	.content
+		p Think you came up with a good rule, huh? Submit it to us and if it passes our 
+			| numerous tests we'll add it for all to embarrass themselves while playing Kings!
+		form.pure-form.pure-form-stacked(method='post', action='/suggestion')
+			fieldset
+				label(for='name') Your name
+				input.pure-u-1(name='name', required='', placeholder='My amazing name')
+				label(for='title') Title
+				input.pure-u-1(name='title', type='text', required='', placeholder='My amazing rule')
+				label(for='description') Description
+				textarea.pure-u-1(name='description', required='', placeholder='My amazing rule\'s description...')
+				label= security.question
+				input.pure-u-1(name='security', required='', type='text')
+				input(name='securityid', type='hidden', value=security.id)
+				button.pure-button.pure-button-primary.pure-u-1(type='submit') Submit Suggestion
+				
+		

@@ -8,6 +8,7 @@ var bodyParser = require('body-parser')
 var routes = require('./routes/index')
 var rule = require('./routes/rule')
 var search = require('./routes/search')
+var suggestion = require('./routes/suggestion')
 
 var app = express()
 
@@ -28,6 +29,7 @@ app.use(express.static(path.join(__dirname, 'public')))
 app.use('/', routes)
 app.use('/', rule)
 app.use('/search', search)
+app.use('/suggestion', suggestion)
 
 // catch 404 and forward to error handler
 app.use((req, res, next) => {
