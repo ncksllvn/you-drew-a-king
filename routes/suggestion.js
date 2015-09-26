@@ -57,7 +57,8 @@ router.post('/', (req, res, next) => {
 	var suggestion = {
 		title: req.body.title,
 		description: req.body.description,
-		name: req.body.name
+		name: req.body.name,
+		ip: req.ip
 	} 
 	
 	Suggestion.create(suggestion).then((suggestion)=>{
