@@ -145,6 +145,10 @@ input[type="text"]:before, input[type="search"]:before, input[type="text"]:after
 		top: -1px;
 		left: 5px;
 	}
+	
+	.pure-button[type=submit]{
+		margin-top: 15px;
+	}
 
 .hero {
 	margin: 50px 0;
