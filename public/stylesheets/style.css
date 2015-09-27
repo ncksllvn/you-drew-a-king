@@ -282,5 +282,5 @@ input[type="text"]:before, input[type="search"]:before, input[type="text"]:after
 	}
 	
 .error-message {
-	text-align: center;
+	color: var(--primaryColor);
 }
