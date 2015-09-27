@@ -2,10 +2,12 @@ extends layout
 
 block content
 	.header
-		h1 Suggestions
+		h1 Submit a Rule
 	.content
-		p Think you came up with a good rule, huh? Submit it to us and if it passes our 
-			| numerous tests we'll add it for all to embarrass themselves while playing Kings!
+		p. 
+			Think you came up with a rule we haven't, huh? Well, send it to us and if it passes a 
+			multitude of nearly impossible tests and if the case studies produce positive results, 
+			we'll add it to our official Kings rules for all to embarrass themselves while playing.
 		form.pure-form.pure-form-stacked(method='post', action='/suggestion')
 			fieldset
 				label(for='name') Your name
