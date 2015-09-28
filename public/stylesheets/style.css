@@ -151,6 +151,7 @@ input[type="text"]:before, input[type="search"]:before, input[type="text"]:after
 		margin-top: 15px;
 	}
 
+/* =============  Landing Page ============= */
 .hero {
 	margin: 50px 0;
 }
@@ -185,7 +186,7 @@ input[type="text"]:before, input[type="search"]:before, input[type="text"]:after
 		.hero .hero-cta .pure-button {
 		}
 
-
+/* =============  /Rule ============= */
 .kings-rule {
 	margin: 0 auto;
 }
@@ -223,7 +224,8 @@ input[type="text"]:before, input[type="search"]:before, input[type="text"]:after
 		font-family: var(--accentFont);
 		background-color: var(--lightColor);
 	}
-	
+
+/* =============  How to Play ============= */
 .card-key-item {
 
 }
@@ -240,7 +242,8 @@ input[type="text"]:before, input[type="search"]:before, input[type="text"]:after
 		margin-top: 0;
 		padding: 0 5px;
 	}
-	
+
+/* =============  Social Media Buttons ============= */	
 .facebook {
 	background-color: #3b5998;
 }
@@ -266,12 +269,27 @@ input[type="text"]:before, input[type="search"]:before, input[type="text"]:after
 
 
 /* =============  Search ============= */
-#search-submit {
-	margin-top: 0;
-	font-family: var(--normalFont);
-	background-color: #777;
+form[name=search]{
+	position: relative;
 }
 
+form[name=search]:before{
+	position: absolute;
+	content: '\f002';
+	font-family: FontAwesome;
+	top: 0;
+	left: 0;
+	margin: 0.5em 0.6em;
+	padding: 1.5px 0;
+	font-size: 1em;
+}
+
+#search-input {
+	padding-left: 2em;
+}
+
+
+/* =============  Search Result ============= */
 .search-result {
 	
 }
