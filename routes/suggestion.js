@@ -30,13 +30,18 @@ var captchas = [
 	}
 ]
 
+var suggestMetadata = {
+	title: 'Submit a Rule',
+	description: 'Submit your own rule to YouDrewAKing.com'
+}
+
 router.get('/', (req, res, next) => {
 	
 	var captchaIndex = Math.floor( Math.random() * 5 )
 	var randomCaptcha = captchas[ captchaIndex ]
 	
-	res.render('suggestion', { security: randomCaptcha })
-  
+	res.render('suggestion', Object.assign({ security: randomCaptcha }, suggestMetadata))
+	
 })
 
 router.post('/', (req, res, next) => {
@@ -62,7 +67,7 @@ router.post('/', (req, res, next) => {
 	} 
 	
 	Suggestion.create(suggestion).then((suggestion)=>{
-		res.render('suggestion-feedback')
+		res.render('suggestion-feedback', suggestMetadata)
 	})
 		
 })

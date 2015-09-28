@@ -4,6 +4,7 @@ var favicon = require('serve-favicon')
 var logger = require('morgan')
 var cookieParser = require('cookie-parser')
 var bodyParser = require('body-parser')
+var constants = require('./constants/locals')
 
 var routes = require('./routes/index')
 var rule = require('./routes/rule')
@@ -12,7 +13,7 @@ var suggestion = require('./routes/suggestion')
 
 var app = express()
 
-app.locals = Object.assign(app.locals, require('./constants/locals'))
+app.locals = Object.assign(app.locals, constants())
 
 // view engine setup
 app.set('views', path.join(__dirname, 'views'))
