@@ -100,6 +100,10 @@ appears on the left side of the page.
         font-family: var(--accentFont);
     }
     
+    #menu a:hover {
+        text-decoration: none;
+    }
+    
     #menu .search {
         font-family: var(--normalFont);
         padding-left: 0;
