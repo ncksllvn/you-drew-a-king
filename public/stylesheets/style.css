@@ -282,6 +282,7 @@ form[name=search]:before{
 
 #search-input {
 	padding-left: 2em;
+	border-color: var(--darkColor);
 }
 
 
