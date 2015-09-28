@@ -13,6 +13,7 @@
 	--secondaryColor: #000;
 	--accentColor: #95876D;
 	--lightColor: #EEE;
+	--mediumColor: #888;
 	--darkColor: #000;
 	--accentFont: 'Oswald', sans-serif;
 	--normalFont: 'Lato', sans-serif;
@@ -156,12 +157,6 @@ input[type="text"]:before, input[type="search"]:before, input[type="text"]:after
 	margin: 50px 0;
 }
 
-	.hero-inner {
-	}
-	
-	.hero .hero-cta {
-	}
-
 	.hero .hero-titles, .hero .hero-cta {
 		text-align: center;
 		padding: 10px;
@@ -170,20 +165,17 @@ input[type="text"]:before, input[type="search"]:before, input[type="text"]:after
 	.hero .hero-titles {
 		padding-bottom: 0;
 	}
-
+	
 		.hero .hero-titles .title {
 			color: var(--secondaryColor);
 			font-size: 3em;
 			line-height: initial;
 			text-transform: uppercase;
+			margin-bottom: 15px;
 		}
 		
-		.hero .hero-titles .subtitle {
-			color: var(--primaryColor);
-			font-size: 2em;
-		}
-
-		.hero .hero-cta .pure-button {
+		.hero .hero-titles .hero-desc {
+			color: var(--mediumColor);
 		}
 
 /* =============  /Rule ============= */
@@ -261,7 +253,7 @@ input[type="text"]:before, input[type="search"]:before, input[type="text"]:after
 }
 
 .email {
-	background-color: #777;
+	background-color: var(--mediumColor);
 }
 
 .facebook-comments-container {
