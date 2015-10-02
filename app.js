@@ -4,7 +4,10 @@ var favicon = require('serve-favicon')
 var logger = require('morgan')
 var cookieParser = require('cookie-parser')
 var bodyParser = require('body-parser')
+var session = require('express-session')
+var uuid = require('node-uuid')
 var constants = require('./constants/locals')
+var captchas = require('./util/captchas')
 
 var routes = require('./routes/index')
 var rule = require('./routes/rule')
@@ -25,7 +28,26 @@ app.use(logger('dev'))
 app.use(bodyParser.json())
 app.use(bodyParser.urlencoded({ extended: false }))
 app.use(cookieParser())
+app.use(session({
+  resave: false,
+  saveUninitialized: false,
+  secret: '$P1d3RM@nspID%&m*^n',
+  genId: (req) => {
+    return uuid.v1()
+  }
+}))
+
 app.use(express.static(path.join(__dirname, 'public')))
+
+app.use((req, res, next) => {
+  var session = req.session
+  
+  if (!session.captchaId){
+    session.captchaId = captchas.random().id
+  }
+  
+  next()
+})
 
 app.use('/', routes)
 app.use('/', rule)

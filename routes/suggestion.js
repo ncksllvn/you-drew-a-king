@@ -1,35 +1,7 @@
 var express = require('express')
 var router = express.Router()
-var captchaGenerator = require('ascii-captcha')
 var { Suggestion } = require('../models')
-
-
-var captchas = (function(){
-	
-	var length = 100
-	var captchas = {
-		random: function(){
-			var n = Math.ceil( Math.random() * length )
-			
-			return this[n]
-		}
-	}
-	
-	for (var i=1; i < (length + 1); i++){
-		
-		var answer = captchaGenerator.generateRandomText(5)
-		
-		captchas[i] = {
-			id: i,
-			image: captchaGenerator.word2Transformedstr(answer),
-			answer: answer
-		}
-		
-	}
-	
-	return captchas
-	
-})()
+var captchas = require('../util/captchas')
 
 var meta = {
 	title: 'Submit a Rule',
@@ -37,15 +9,21 @@ var meta = {
 }
 
 router.get('/', (req, res, next) => {
+	var captchaId = req.session.captchaId
+	var captcha = captchas[captchaId]
+	
 	res.render('suggestion', 
-		Object.assign({ captcha: captchas.random() }, meta))
+		Object.assign({ captcha: captcha }, meta))
 })
 
 router.post('/', (req, res, next) => {
 	
-	var captchaId = req.body['security-id']
+	var captchaId = req.session.captchaId
 	var captchaAnswer = captchas[captchaId].answer
 	var userAnswer = req.body['security-user-answer']
+	
+	// Get a new captcha regardless of if they answered right or not
+	req.session.captchaId = captchas.random().id
 	
 	if (!userAnswer || !captchaAnswer || captchaAnswer.toLowerCase() != userAnswer.toLowerCase()){
 		var err = new Error('Are you sure you\'re human?')
