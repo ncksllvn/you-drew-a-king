@@ -32,3 +32,5 @@ npm-debug.log
 # build directory
 public/build
 public/dist
+
+public/components
