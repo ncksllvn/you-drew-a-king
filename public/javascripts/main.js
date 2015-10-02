@@ -15,14 +15,22 @@
 	{
 		suggestRuleForm.onsubmit = function(event){
 			
+			var errorMessage = document.getElementsByClassName('error-message')[0]
 			var title = this.title.value
 			var description = this.description.value
 			
 			if (!title.length || !description.length)
 			{
-				var errorMessage = document.getElementsByClassName('error-message')[0]
+				
 				
 				errorMessage.innerHTML = 'Rule title and description are required.'
+				
+				return false
+			}
+			
+			if (description.length < 10)
+			{
+				errorMessage.innerHTML = 'Come on, your description should be at least 10 characters long.'
 				
 				return false
 			}

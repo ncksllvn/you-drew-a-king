@@ -9,16 +9,16 @@ block content
 			multitude of nearly impossible tests and if the case studies produce positive results, 
 			we'll add it to our official Kings rules for all to embarrass themselves while playing.
 		
-		.error-message
+		.error-message= message
 		
 		form.pure-form.pure-form-stacked(method='post', action='/suggestion', name='suggest')
 			fieldset
 				label(for='name') Your name
-				input.pure-u-1(name='name', type='text', placeholder='My amazing name')
+				input.pure-u-1(name='name', type='text', value=suggestion.name, placeholder='My amazing name')
 				label(for='title') Rule Title
-				input.pure-u-1(name='title', type='text', required='', placeholder='My amazing rule')
+				input.pure-u-1(name='title', type='text', value=suggestion.title required='', placeholder='My amazing rule')
 				label(for='description') Rule Description
-				textarea.pure-u-1(name='description', required='', placeholder='My amazing rule\'s description...')
+				textarea.pure-u-1(name='description', required='', placeholder='My amazing rule\'s description...')= suggestion.description
 				pre.captcha= captcha.image
 				label What does the above message say? We only ask because we don't like robots.
 				input.pure-u-1(name='security-user-answer', required='', type='text')
