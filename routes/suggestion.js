@@ -1,63 +1,57 @@
 var express = require('express')
 var router = express.Router()
+var captchaGenerator = require('ascii-captcha')
 var { Suggestion } = require('../models')
 
-var captchas = [
-	{
-		id: 1,
-		question: 'What is two plus two?',
-		answer: 4
-	},
-	{
-		id: 2,
-		question: 'What is nine plus one hundred?',
-		answer: 109
-	},
-	{
-		id: 3,
-		question: 'What is three minus one?',
-		answer: 2
-	},
-	{
-		id: 4,
-		question: 'What is ten plus four?',
-		answer: 14
-	},
-	{
-		id: 5,
-		question: 'What is one plus six?',
-		answer: 7
-	}
-]
 
-var suggestMetadata = {
+var captchas = (function(){
+	
+	var length = 100
+	var captchas = {
+		random: function(){
+			var n = Math.ceil( Math.random() * length )
+			
+			return this[n]
+		}
+	}
+	
+	for (var i=1; i < (length + 1); i++){
+		
+		var answer = captchaGenerator.generateRandomText(5)
+		
+		captchas[i] = {
+			id: i,
+			image: captchaGenerator.word2Transformedstr(answer),
+			answer: answer
+		}
+		
+	}
+	
+	return captchas
+	
+})()
+
+var meta = {
 	title: 'Submit a Rule',
 	description: 'Submit your own rule to YouDrewAKing.com'
 }
 
 router.get('/', (req, res, next) => {
-	
-	var captchaIndex = Math.floor( Math.random() * 5 )
-	var randomCaptcha = captchas[ captchaIndex ]
-	
-	res.render('suggestion', Object.assign({ security: randomCaptcha }, suggestMetadata))
-	
+	res.render('suggestion', 
+		Object.assign({ captcha: captchas.random() }, meta))
 })
 
 router.post('/', (req, res, next) => {
 	
-	var securityAnswer = req.body.security
-	var securityQuestionId = req.body.securityid
-	var securityQuestion = captchas.filter((sq)=>{
-		return sq.id == securityQuestionId
-	})[0]
+	var captchaId = req.body['security-id']
+	var captchaAnswer = captchas[captchaId].answer
+	var userAnswer = req.body['security-user-answer']
 	
-	if (!securityQuestion || securityQuestion.answer != securityAnswer)
-	{
+	if (!userAnswer || !captchaAnswer || captchaAnswer.toLowerCase() != userAnswer.toLowerCase()){
 		var err = new Error('Are you sure you\'re human?')
 		err.status = 400
 		return next(err)
-	} 
+	}
 	
 	var suggestion = {
 		title: req.body.title,
@@ -67,7 +61,7 @@ router.post('/', (req, res, next) => {
 	} 
 	
 	Suggestion.create(suggestion).then((suggestion)=>{
-		res.render('suggestion-feedback', suggestMetadata)
+		res.render('suggestion-feedback', meta)
 	})
 		
 })

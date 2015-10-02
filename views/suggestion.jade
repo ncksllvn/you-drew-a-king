@@ -5,7 +5,7 @@ block content
 		h1 Submit a Rule
 	.content
 		p. 
-			Think you came up with a rule we haven't, huh? Well, send it to us and if it passes a 
+			Think you came up with a rule we haven't, huh? Well if it can pass a 
 			multitude of nearly impossible tests and if the case studies produce positive results, 
 			we'll add it to our official Kings rules for all to embarrass themselves while playing.
 		
@@ -19,9 +19,10 @@ block content
 				input.pure-u-1(name='title', type='text', required='', placeholder='My amazing rule')
 				label(for='description') Rule Description
 				textarea.pure-u-1(name='description', required='', placeholder='My amazing rule\'s description...')
-				label= security.question
-				input.pure-u-1(name='security', required='', type='text')
-				input(name='securityid', type='hidden', value=security.id)
+				pre.captcha= captcha.image
+				label What does the above message say? We only ask because we don't like robots.
+				input.pure-u-1(name='security-user-answer', required='', type='text')
+				input(name='security-id', type='hidden', value=captcha.id)
 				button.pure-button.pure-button-primary.pure-u-1(type='submit') Submit Rule
 				
 		
