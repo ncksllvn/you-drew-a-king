@@ -98,20 +98,18 @@ a {
 		margin: 0 auto;
 	}
 
-textarea, input[type="text"], input[type], .pure-form input[type="text"], .pure-form input[type] {
+textarea, .pure-form textarea, 
+input[type="text"], .pure-form input[type="text"]{
 	background: none;
-	background-color: #fff;
 	border-radius: 0 !important;
 	box-shadow: none !important;
 	color: inherit;
 	-webkit-appearance: none;
+	background-color: var(--lightColor);
+	border-color: transparent;
 }
 
-input[type="text"]:before, input[type="search"]:before, input[type="text"]:after, input[type="search"]:after{
-	border-radius: 0;
-}
-
-	.pure-form input[type="text"]:focus, input[type="text"]:focus, .pure-form input[type="search"]:focus, input[type="search"]:focus {
+	textarea:focus, .pure-form textarea:focus, .pure-form input[type="text"]:focus, input[type="text"]:focus {
 		background-color: #fff;
 	}
 
@@ -218,7 +216,6 @@ input[type="text"]:before, input[type="search"]:before, input[type="text"]:after
 	
 	.kings-rule .actions .permalink {
 		font-family: var(--accentFont);
-		background-color: var(--lightColor);
 	}
 
 /* =============  How to Play ============= */
@@ -283,6 +280,7 @@ form[name=search]:before{
 #search-input {
 	padding-left: 2em;
 	border-color: var(--darkColor);
+	background-color: #fff;
 }
 
 
@@ -303,5 +301,5 @@ form[name=search]:before{
 .captcha {
 	font-size: 3px;
 	line-height: 2px;
-	margin-top: 25px;
+	margin: 25px 0;
 }
