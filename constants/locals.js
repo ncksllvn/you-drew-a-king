@@ -1,7 +1,7 @@
 module.exports = ()=>{
 	return {
 		siteTitle: 'You Drew A King.',
-		siteLogo: '/images/logo-200x00.png',
+		siteLogo: '/images/logo.png',
 		siteLogoSvg: '/images/logo.svg',
 		siteDescription: 'All of the best rules to play during Kings, King\'s Cup and the Ring of Fire.',
 		facebookAppId: (function(){
