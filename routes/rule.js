@@ -33,7 +33,11 @@ router.get('/:title/:id', (req, res, next) => {
   
   var ruleId = req.params.id
   
+  if (isNaN(ruleId)) return next()
+  
   Rule.findById(ruleId).then((rule) => {
+    
+    if (!rule) return next()
     
     res.render('rule', {
       title: rule.title,
