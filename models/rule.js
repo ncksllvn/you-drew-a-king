@@ -1,5 +1,5 @@
 var slug = require('slug')
-var { facebookAppId } = require('../constants/locals')
+var { host, facebookAppId } = require('../constants/locals')()
 
 module.exports = function(sequelize, DataTypes) {
   
@@ -24,30 +24,41 @@ module.exports = function(sequelize, DataTypes) {
       
       uri: function() {
         return '/' + slug(this.title) + '/' + this.id
-      }
+      },
       
-    },
-    
-    instanceMethods: {
+      permalink: function(){
+        return host + this.uri
+      },
       
-      getWithShareLinks: function(req) {
-        
-        var rule = this.get({ plain: true })
-        var host = req.protocol + '://' + req.get('host')
-        var permalink = host + rule.uri
+      encodedPermalink: function(){
+        return encodeURIComponent(this.permalink)
+      },
+      
+      facebookShareUrl: function(){
+        return `https://www.facebook.com/dialog/sharer.php?display=popup&href=${this.encodedPermalink}&app_id=${facebookAppId}`
+      },
+      
+      twitterShareUrl: function(){
+        return `http://twitter.com/share?url=${this.encodedPermalink}`
+      },
+      
+      tumblrShareUrl: function(){
+        return `http://www.tumblr.com/share/link?url=${this.encodedPermalink}`
+      },
+      
+      pinterestShareUrl: function(){
         var image = host + this.image
-        var encodedPermalink = encodeURIComponent(permalink)
-        var pinterestDescription = encodeURIComponent(rule.title + ' - ' + rule.description)
+        var pinterestDescription = encodeURIComponent(this.title + ' - ' + this.description)
         
-        return Object.assign({
-          facebookShareUrl: `https://www.facebook.com/dialog/sharer.php?display=popup&href=${encodedPermalink}&app_id=${facebookAppId}`,
-          twitterShareUrl: `http://twitter.com/share?url=${encodedPermalink}`,
-          tumblrShareUrl: `http://www.tumblr.com/share/link?url=${encodedPermalink}`,
-          pinterestShareUrl: `http://pinterest.com/pin/create/button/?url=${encodedPermalink}&media=${image}&description=${pinterestDescription}`,
-          redditShareUrl: `http://reddit.com/submit?url=${encodedPermalink}&title=${rule.title}`,
-          emailShareUrl: `mailto:?subject=${rule.title}&body=${permalink}`,
-          permalink: permalink
-        }, rule) 
+        return `http://pinterest.com/pin/create/button/?url=${this.encodedPermalink}&media=${image}&description=${pinterestDescription}`
+      },
+      
+      redditShareUrl: function(){
+        return `http://reddit.com/submit?url=${this.encodedPermalink}&title=${this.title}`
+      },
+      
+      emailShareUrl: function(){
+        return `mailto:?subject=${this.title}&body=${this.permalink}`
       }
       
     },

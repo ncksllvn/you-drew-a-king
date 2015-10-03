@@ -19,7 +19,7 @@ router.get('/rule', (req, res, next) => {
       title: 'Get a Rule',
       description: 'Get a funny or classic rule for when you draw a king and blank out.',
       image: 'http://placehold.it/200x200',
-      rule: rule.getWithShareLinks(req)
+      rule: rule
     })
     
   })
@@ -32,10 +32,12 @@ router.get('/:title/:id', (req, res, next) => {
   
   Rule.findById(ruleId).then((rule) => {
     
-    var data = rule.get({ plain: true })
-    data.rule = rule.getWithShareLinks(req)
-    
-    res.render('rule', data)
+    res.render('rule', {
+      title: rule.title,
+      description: rule.description,
+      image: rule.image,
+      rule: rule
+    })
     
   })
   
