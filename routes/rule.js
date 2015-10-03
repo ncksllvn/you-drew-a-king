@@ -22,7 +22,6 @@ router.get('/rule', (req, res, next) => {
     res.render('rule', {
       title: 'Get a Rule',
       description: 'Get a funny or classic rule for when you draw a king and blank out.',
-      image: 'http://placehold.it/200x200',
       rule: rule
     })
     
