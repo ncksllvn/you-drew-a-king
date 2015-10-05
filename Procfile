@@ -1,1 +1,1 @@
-web: babel-node ./bin/www
+web: node_modules/forever/bin/forever ./forever
