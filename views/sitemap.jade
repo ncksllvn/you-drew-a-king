@@ -1,0 +1,15 @@
+doctype xml
+urlset(xmlns="http://www.sitemaps.org/schemas/sitemap/0.9")
+	url
+		loc= host
+	url
+		loc=(host + '/rule')
+		changefreq always
+	url
+		loc=(host + '/suggestion')
+	url
+		loc=(host + '/how-to-play')
+	each rule in rules
+		url
+			loc= rule.permalink
+			lastmod= moment(rule.updatedAt).format('YYYY-MM-DD')
