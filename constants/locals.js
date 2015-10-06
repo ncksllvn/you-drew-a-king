@@ -24,7 +24,7 @@ module.exports = ()=>{
 					return 'http://sta.youdrewaking.com'
 				case 'production':
 				default:
-					return 'http://youdrewaking.com'
+					return 'http://www.youdrewaking.com'
 			}
 		})(),
 		buildDirectory: process.env.NODE_ENV == 'development' ? '/build/' : '/dist/'
