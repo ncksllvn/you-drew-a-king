@@ -1,4 +1,4 @@
-(function(){
+;(function(){
 	
 	var permalinkInput = document.getElementsByClassName('permalink')[0]
 	

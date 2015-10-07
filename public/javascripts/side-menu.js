@@ -1,4 +1,4 @@
-(function (window, document) {
+;(function (window, document) {
 
     var layout   = document.getElementById('layout'),
         menu     = document.getElementById('menu'),

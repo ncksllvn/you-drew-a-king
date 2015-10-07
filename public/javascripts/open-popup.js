@@ -1,4 +1,4 @@
-function openPopup(url, title, w, h) {
+;function openPopup(url, title, w, h) {
     var wLeft = window.screenLeft ? window.screenLeft : window.screenX;
     var wTop = window.screenTop ? window.screenTop : window.screenY;
 
