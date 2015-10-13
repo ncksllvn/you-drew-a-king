@@ -14,7 +14,7 @@ module.exports = function(sequelize, DataTypes) {
       get: function(){
         var image = this.getDataValue('image')
         
-        return image || '/images/rules/default.png'
+        return image ?  '/images/rules/' + image : '/images/rules/default.png'
       }
     }
     
