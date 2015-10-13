@@ -19,9 +19,9 @@ module.exports = ()=>{
 		host: (function(){
 			switch (process.env.NODE_ENV){
 				case 'staging':
-					return 'https://sta.youdrewaking.com'
+					return 'http://sta.youdrewaking.com'
 				case 'production':
-					return 'https://www.youdrewaking.com'
+					return 'http://www.youdrewaking.com'
 				case 'development':
 				default:
 					return 'http://localhost:3000'
