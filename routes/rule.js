@@ -2,7 +2,7 @@ var express = require('express')
 var slug = require('slug')
 var router = express.Router()
 var { Rule } = require('../models')
-var prevRulesMaxLength = 55
+var prevRulesMaxLength = 50
 
 router.get('/rule', (req, res, next) => {
   
@@ -16,7 +16,7 @@ router.get('/rule', (req, res, next) => {
     
     prevRules.push(rule.id)
     
-    if (prevRules.length > prevRulesMaxLength)
+    if (prevRules.length >= prevRulesMaxLength)
       req.session.prevRules = prevRules.slice(1)
     
     res.render('rule', {
