@@ -25,7 +25,23 @@ router.get('/rule', (req, res, next) => {
       rule: rule
     })
     
-  })
+  }).catch(next)
+  
+})
+
+router.get('/rules', (req, res, next) => {
+  
+  Rule.findAll({
+    attributes: ['id', 'title']
+  }).then((rules) => {
+    
+    res.render('rules', {
+      title: 'Rules Index',
+      description: 'All of the rules your heart desires.',
+      rules: rules
+    })
+    
+  }).catch(next)
   
 })
 
@@ -46,7 +62,7 @@ router.get('/:title/:id', (req, res, next) => {
       rule: rule
     })
     
-  })
+  }).catch(next)
   
 })
 

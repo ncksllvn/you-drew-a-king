@@ -1,13 +1,16 @@
 .pure-menu
   a.pure-menu-heading(href='/') You Drew A King.
-  ul.pure-menu-list
-    li.pure-menu-item.menu-item-divideds.search
-      form.pure-form(method='get', action='/search', name='search')
-        input.pure-u-1(type='text', required='', name='q', placeholder='Search rules')#search-input
-    li.pure-menu-item
-      a.pure-menu-link(href='/rule') Get a rule
-    li.pure-menu-item
-      a.pure-menu-link(href='/suggestion') Submit A Rule
-    li.pure-menu-item
-      a.pure-menu-link(href='/how-to-play') How to play
+  nav
+    ul.pure-menu-list
+      li.pure-menu-item.menu-item-divideds.search
+        form.pure-form(method='get', action='/search', name='search')
+          input.pure-u-1(type='text', required='', name='q', placeholder='Search rules')#search-input
+      li.pure-menu-item
+        a.pure-menu-link(href='/rule') Random Rule
+      li.pure-menu-item
+        a.pure-menu-link(href='/rules') Rules Index
+      li.pure-menu-item
+        a.pure-menu-link(href='/suggestion') Submit A Rule
+      li.pure-menu-item
+        a.pure-menu-link(href='/how-to-play') How to Play
     
