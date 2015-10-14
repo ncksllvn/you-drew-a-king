@@ -302,3 +302,9 @@ form[name=search]:before{
 	line-height: 2px;
 	margin: 25px 0;
 }
+
+.ad {
+	border: 1px solid var(--lightColor);
+	margin-top: 25px;
+	margin-bottom: 25px;
+}
