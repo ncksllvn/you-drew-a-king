@@ -317,8 +317,13 @@ form[name=search]:before{
 	padding: 3em 0.8em;
 	margin: 1em 0;
 	background-color: var(--lightColor);
-	border-radius: 10px;
 }
+
+	@media(--sm-viewport){ 
+		.rule-preview {
+			padding: 2em 0.4em;
+		}	
+	}
 
 	.rule-preview-link:hover, .rule-preview-link:focus {
 		text-decoration: underline;
@@ -333,4 +338,5 @@ form[name=search]:before{
 		color: var(--darkColor);
 		margin-top: 0;
 		word-break: break-word;
+		hyphens: auto;
 	}
