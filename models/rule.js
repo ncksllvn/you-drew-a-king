@@ -30,6 +30,22 @@ module.exports = function(sequelize, DataTypes) {
         return host + this.uri
       },
       
+      descriptionAsPlainText: function(){
+        
+        if (this.getDataValue('cleanDescription'))
+          return this.getDataValue('cleanDescription')
+        
+        var description = this.getDataValue('description')
+        
+        var clean = description.replace(/<\/?[^>]+(>|$)/g, '')
+        
+        this.setDataValue('cleanDescription', clean)
+        
+        console.log(clean)
+        
+        return clean
+      },
+      
       encodedPermalink: function(){
         return encodeURIComponent(this.permalink)
       },
@@ -48,7 +64,7 @@ module.exports = function(sequelize, DataTypes) {
       
       pinterestShareUrl: function(){
         var image = host + this.image
-        var pinterestDescription = encodeURIComponent(this.title + ' - ' + this.description)
+        var pinterestDescription = encodeURIComponent(this.title + ' - ' + this.descriptionAsPlainText)
         
         return `http://pinterest.com/pin/create/button/?url=${this.encodedPermalink}&media=${image}&description=${pinterestDescription}`
       },
