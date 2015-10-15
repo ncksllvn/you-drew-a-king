@@ -311,7 +311,7 @@ form[name=search]:before{
 }
 
 .rule-preview {
-	padding: 1em;
+	padding: 2em 1em;
 	background-color: var(--lightColor);
 	margin: 1em;
 }
@@ -326,4 +326,5 @@ form[name=search]:before{
 	
 	.rule-preview .rule-preview-title {
 		color: var(--darkColor);
+		margin-top: 0;
 	}
