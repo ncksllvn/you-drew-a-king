@@ -89,7 +89,7 @@ module.exports = function(sequelize, DataTypes) {
         //keyword = sequelize.escape(keyword)
           
         return Rule.findAll({
-          attributes: ['id', 'title'],
+          attributes: ['id', 'title', 'image'],
           where: {
             $or: [
               {
