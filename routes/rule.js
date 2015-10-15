@@ -34,7 +34,8 @@ router.get('/rule', (req, res, next) => {
 router.get('/rules', (req, res, next) => {
   
   Rule.findAll({
-    attributes: ['id', 'title']
+    attributes: ['id', 'title', 'image'],
+    order: ['title']
   }).then((rules) => {
     
     res.render('rules', {

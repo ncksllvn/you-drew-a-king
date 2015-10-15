@@ -4,13 +4,5 @@ block content
 	.header
 		h1 Results for #{keyword}
 	.content
-		if !rules.length
-			.search-result
-				.search-result-title
-					h1 We got nothing for that.
-		else
-			each rule in rules
-				.search-result
-					h1.search-result-title
-						a(href=rule.uri)= rule.title
+		include ./partials/rules-preview.jade
 		

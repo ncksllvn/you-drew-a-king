@@ -26,6 +26,7 @@ body, .pure-g [class *= "pure-u"]  {
 h1, h2, h3, h4, h5, h6 {
 	font-weight: normal;
 	font-family: var(--accentFont);
+	text-align: center;
 }
 
 a {
@@ -308,3 +309,21 @@ form[name=search]:before{
 	margin-top: 25px;
 	margin-bottom: 25px;
 }
+
+.rule-preview {
+	padding: 1em;
+	background-color: var(--lightColor);
+	margin: 1em;
+}
+
+	.rule-preview-link:hover {
+		text-decoration: none;
+	}
+
+	.rule-preview .rule-preview-image {
+		padding: 0 2em;
+	}
+	
+	.rule-preview .rule-preview-title {
+		color: var(--darkColor);
+	}

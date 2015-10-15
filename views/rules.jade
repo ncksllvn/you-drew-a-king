@@ -2,10 +2,7 @@ extends layout
 
 block content
 	.header
-		h1 Rules Index
+		h1 The Rules Index
 	.content
-		each rule in rules
-			.search-result
-				h1.search-result-title
-					a(href=rule.uri)= rule.title
+		include ./partials/rules-preview.jade
 		
