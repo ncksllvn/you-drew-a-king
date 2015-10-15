@@ -117,7 +117,7 @@ input[type="text"], .pure-form input[type="text"]{
 	border: 1px solid transparent;
 	text-transform: uppercase;
 	color: #fff;
-	font-family: var(--accentFont);
+	font-family: var(--accentFont);	
 }
 
 	.pure-button.pure-u-1 {
@@ -136,7 +136,7 @@ input[type="text"], .pure-form input[type="text"]{
 	}
 
 	.pure-button-secondary, a.pure-button-secondary {
-		background-color: var(--secondaryColor);
+		background-color: var(--mediumColor);
 		color: #fff;
 	}
 
@@ -169,15 +169,18 @@ input[type="text"], .pure-form input[type="text"]{
 	}
 	
 		.hero .hero-titles .title {
-			color: var(--secondaryColor);
 			font-size: 3em;
 			line-height: initial;
 			text-transform: uppercase;
 			margin-bottom: 15px;
 		}
 		
+		.hero .alt-action {
+			margin-top: 10px;
+		}
+		
 		.hero .hero-titles .hero-desc {
-			color: var(--mediumColor);
+			/*color: var(--mediumColor);*/
 		}
 
 /* =============  /Rule ============= */
@@ -311,13 +314,15 @@ form[name=search]:before{
 }
 
 .rule-preview {
-	padding: 2em 1em;
-	background-color: var(--lightColor);
+	padding: 3em 0.8em;
 	margin: 1em 0;
+	background-color: var(--lightColor);
+	border-radius: 10px;
 }
 
-	.rule-preview-link:hover {
-		text-decoration: none;
+	.rule-preview-link:hover, .rule-preview-link:focus {
+		text-decoration: underline;
+		color: #000;
 	}
 
 	.rule-preview .rule-preview-image {
