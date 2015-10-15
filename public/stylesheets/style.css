@@ -313,7 +313,7 @@ form[name=search]:before{
 .rule-preview {
 	padding: 2em 1em;
 	background-color: var(--lightColor);
-	margin: 1em;
+	margin: 1em 0;
 }
 
 	.rule-preview-link:hover {
@@ -321,7 +321,7 @@ form[name=search]:before{
 	}
 
 	.rule-preview .rule-preview-image {
-		padding: 0 1em;
+		padding: 0 2em;
 	}
 	
 	.rule-preview .rule-preview-title {

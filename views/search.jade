@@ -4,5 +4,9 @@ block content
 	.header
 		h1 Results for #{keyword}
 	.content
-		include ./partials/rules-preview.jade
+		if rules.length
+			include ./partials/rules-preview.jade
+		else
+			h1.search-result-title We got nothing for that.
+			
 		
