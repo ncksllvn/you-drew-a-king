@@ -6,18 +6,16 @@ var prevRulesMaxLength = 50
 
 router.get('/rule', (req, res, next) => {
   
-  var prevRules = req.session.prevRules = req.session.prevRules || []
+  //var exclusions = req.session.prevRules = req.session.prevRules || []
   
-  Rule.findRandom({
-    id: {
-      $notIn: prevRules.length > 0 ? prevRules : [-1]
-    }
-  }).then((rule) => {
+  Rule.findRandomAndNext(/*exclusions*/).then((rule) => {
     
-    prevRules.push(rule.id)
+    /*
+    exclusions.push(rule.id)
     
-    if (prevRules.length >= prevRulesMaxLength)
-      req.session.prevRules = prevRules.slice(1)
+    if (exclusions.length >= prevRulesMaxLength)
+      req.session.prevRules = exclusions.slice(1)
+    */
     
     res.render('rule', {
       title: 'Get a Rule',
@@ -51,7 +49,7 @@ router.get('/:title/:id', (req, res, next) => {
   
   if (isNaN(ruleId)) return next()
   
-  Rule.findById(ruleId).then((rule) => {
+  Rule.findByIdAndRandomNext({ id: ruleId }).then((rule) => {
     
     if (!rule) return next()
     

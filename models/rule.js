@@ -64,10 +64,7 @@ module.exports = function(sequelize, DataTypes) {
     },
     
     classMethods: {
-      associate: (models) => {
-        // associations can be defined here
-      },
-      
+
       searchByKeyword: (keyword) => {
         
         if (!keyword || keyword.length < 3)
@@ -98,13 +95,49 @@ module.exports = function(sequelize, DataTypes) {
         
       },
       
-      findRandom: (where) => {
+      findByIdAndRandomNext: (options) => {
         
-        where = where || {}
+        var ruleId = options.id
         
-        return Rule.findOne({
-          where: where,
-          limit: 1,
+        return sequelize.Promise.join(
+          Rule.findById(ruleId),
+          Rule.findRandom({ limit: 1 }),
+          function result(rule1, rule2){
+            
+            console.log(arguments)
+            
+            rule1.next = rule2[0]
+            
+            return rule1
+            
+          } 
+        )
+        
+      },
+      
+      findRandomAndNext: () => {
+        return Rule.findRandom({ limit: 2 }).then((rules) => {
+          
+          return Object.assign(rules[0], {
+            next: rules[1]
+          })
+          
+        })
+        
+      },
+      
+      findRandom: (options) => {
+        
+        var exclusions = options.exclusions || [-1]
+        var limit = options.limit || 1
+        
+        return Rule.findAll({
+          where: {
+            id: {
+              $notIn: exclusions
+            } 
+          },
+          limit: limit,
           order: [
             [sequelize.fn('RANDOM')]
           ]
