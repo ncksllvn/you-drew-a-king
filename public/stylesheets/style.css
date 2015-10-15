@@ -327,4 +327,5 @@ form[name=search]:before{
 	.rule-preview .rule-preview-title {
 		color: var(--darkColor);
 		margin-top: 0;
+		word-break: break-word;
 	}
