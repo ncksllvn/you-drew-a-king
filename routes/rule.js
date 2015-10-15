@@ -63,7 +63,7 @@ router.get('/:title/:id', (req, res, next) => {
     
     res.render('rule', {
       title: rule.title,
-      description: rule.description,
+      description: rule.descriptionAsPlainText,
       image: rule.image,
       rule: rule
     })

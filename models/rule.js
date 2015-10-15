@@ -41,8 +41,6 @@ module.exports = function(sequelize, DataTypes) {
         
         this.setDataValue('cleanDescription', clean)
         
-        console.log(clean)
-        
         return clean
       },
       
