@@ -101,10 +101,8 @@ module.exports = function(sequelize, DataTypes) {
         
         return sequelize.Promise.join(
           Rule.findById(ruleId),
-          Rule.findRandom({ limit: 1 }),
+          Rule.findRandom({ limit: 1, exclusions: options.exclusions }),
           function result(rule1, rule2){
-            
-            console.log(arguments)
             
             rule1.next = rule2[0]
             
@@ -115,8 +113,8 @@ module.exports = function(sequelize, DataTypes) {
         
       },
       
-      findRandomAndNext: () => {
-        return Rule.findRandom({ limit: 2 }).then((rules) => {
+      findRandomAndNext: (options) => {
+        return Rule.findRandom({ limit: 2, exclusions: options.exclusions }).then((rules) => {
           
           return Object.assign(rules[0], {
             next: rules[1]

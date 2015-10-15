@@ -4,18 +4,22 @@ var router = express.Router()
 var { Rule } = require('../models')
 var prevRulesMaxLength = 50
 
+router.use((req, res, next) => {
+  req.session.prevRules = req.session.prevRules || []
+  
+  if (req.session.prevRules.length >= prevRulesMaxLength)
+    req.session.prevRules = req.session.prevRules.slice(1)
+  
+  next()
+})
+
 router.get('/rule', (req, res, next) => {
   
-  //var exclusions = req.session.prevRules = req.session.prevRules || []
+  var exclusions = req.session.prevRules.length ? req.session.prevRules : null
   
-  Rule.findRandomAndNext(/*exclusions*/).then((rule) => {
+  Rule.findRandomAndNext({ exclusions: exclusions }).then((rule) => {
     
-    /*
-    exclusions.push(rule.id)
-    
-    if (exclusions.length >= prevRulesMaxLength)
-      req.session.prevRules = exclusions.slice(1)
-    */
+    req.session.prevRules.push(rule.id)
     
     res.render('rule', {
       title: 'Get a Rule',
@@ -45,13 +49,16 @@ router.get('/rules', (req, res, next) => {
 
 router.get('/:title/:id', (req, res, next) => {
   
+  var exclusions = req.session.prevRules.length ? req.session.prevRules : null
   var ruleId = req.params.id
   
   if (isNaN(ruleId)) return next()
   
-  Rule.findByIdAndRandomNext({ id: ruleId }).then((rule) => {
+  Rule.findByIdAndRandomNext({ id: ruleId, exclusions: exclusions }).then((rule) => {
     
     if (!rule) return next()
+    
+    req.session.prevRules.push(rule.id)
     
     res.render('rule', {
       title: rule.title,
