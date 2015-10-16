@@ -1,16 +1,11 @@
 .pure-g.l-boxes
 	each rule, index in rules
-		if index == Math.ceil(rules.length/2)
-			.pure-u-1
-				.l-box
-					include ./google-ads.jade
-		else
-			.pure-u-1-2.pure-u-sm-1-3
-				.l-box
-					a.rule-preview-link(href=rule.uri)
-						.rule-preview
-							h3.rule-preview-title= rule.title
-							.rule-preview-image
-								img.pure-img(src=rule.image)
+		.pure-u-1-2.pure-u-sm-1-3
+			.l-box
+				a.rule-preview-link(href=rule.uri)
+					.rule-preview
+						h3.rule-preview-title= rule.title
+						.rule-preview-image
+							img.pure-img(src=rule.image)
 
 		
