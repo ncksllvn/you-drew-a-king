@@ -7,7 +7,7 @@ id,title,description,image
 7,Ke$ha,"<i>I'm talking about everybody getting crunk, crunk. Boys trying to touch my junk, junk.</i> After a player is done speaking, they must repeat their last word once more. Any player who fails to speak in the Ke$ha fashion must drink drink.",
 8,Pterodactyl,"A tribute to the dinosaur that never truly had its moment in Jurassic Park. At any point during the game, begin screeching and waving your arms. All other players must then race to do the same. The loser must drink.",The-Pterodactyl.png
 9,Choo Choo,"All aboard! While any player laughs, they must also be pumping both arms in the air in a choo choo fashion. Any player who laughs without choo chooing is sentenced to a drink.",Choo-Choo.png
-10,Neanderthals,"In case the night hasn’t devolved to this point already, all players must speak only in sentences of three words or less. Any player who exceeds that limit must drink.",
+10,Neanderthals,"In case the night hasn’t devolved to this point already, all players may speak only in sentences of three words or less. Any player who exceeds that limit must drink.",
 11,Psychics,"Finally, you can passive aggressively call out that person who claims to be psychic.  After a player draws a card, they must predict the card's suit before turning it over. There’s a drink in the immediate future for any player who makes a wrongful prediction.",The-Psychic.png
 12,Forehead Master,"The meaner, grouchier, older brother of the Thumb Master. At any point during the game, place your forehead onto the playing surface. All other players must race to do the same. The loser must drink.",
 13,Incognito,"Each player makes up a new name for the player to their left, which then becomes that player's name. Any player who uses another player’s real name must drink.",Incognito.png
@@ -17,7 +17,7 @@ id,title,description,image
 17,Non-Staring Contest,"If any two players make eye contact, both must drink.",
 18,High Fives All Around,Got that itch on your hand for some high fivin’? Good. Any two players who make eye contact must promptly high five. A failure to slap some skin means both players drink.,
 19,The Minister of Foreign Affairs,"Only you may communicate with anyone outside of the game. In the event another player needs to communicate with an outsider, they may ask you to speak in their honor. Any player who defies your authority must drink.",
-20,I'm Not Wearing Hockey Pants,All players must use Christian Bale's Batman voice while speaking. Any player who speaks without imitating the Dark Knight must drink.,Batman.png
+20,I'm Not Wearing Hockey Pads,All players must use Christian Bale's Batman voice while speaking. Any player who speaks without imitating the Dark Knight must drink.,Batman.png
 21,Ambidextrous,"Being able to drink efficiently with either hand is an essential skill, so all players must drink using their non-dominant hand. Any player who fails to work on that other arm’s coordination must drink.",The-Ambidextrous.png
 22,The Royals,"<i>And we'll never be royals (royals). It don't run in our blood.</i> All players must place a bottle cap on their head, which will serve as their crown. If a crown falls, the player drinks.",
 23,Toast,<i>I don't know half of you half as well as I should like; and I like less than half of you half as well as you deserve.</i> All players must make a toast before they drink. Any player that drinks without toasting must drink once more. ,Cheers.png
@@ -37,7 +37,7 @@ id,title,description,image
 37,Nature Calls,"After a player drinks, they must make their finest animal noise. For example, <i>moo</i>. Any player that forgets their call to nature must drink.",Born-in-a-Barn.png
 38,Covert Operation,Every player must say <i>over and out</i> after speaking. Any player who fails to end their transmission according to protocol must drink.,Covert-Operation.png
 39,Together Forever,"Phone usage is now prohibited. Any player caught using their phone must hand it over to the other players and allow a single text message to be sent to any contact they choose. As a courtesy, the player may choose 5 contacts that are off limits to this rule.",
-40,Hairy Situation,Female players are now banned from touching the hair on their heads and male players are banned from touching the hair on their face. Any hair touchers must drink.,
+40,Sasquatch,Female players are now banned from touching the hair on their heads and male players are banned from touching the hair on their face. Any hair touchers must drink.,Sasquatch.png
 41,Wink Master,"In addition to getting creeped out, if another player sees you wink at them at any point during the game that player must drink.",
 42,The Prophecy,"After a player is finished speaking, they must say a fake chapter and verse as if it were from the Bible. For example, <i>Can you get me another beer? Porter 2:18</i>. Any player who forgets thou holiness must drink.",
 43,Falsetto,"All players must speak only in <a href=""http://dictionary.reference.com/browse/falsetto"">falsetto</a>. Any player who falsett-no’s must drink.",
@@ -51,6 +51,6 @@ id,title,description,image
 51,Kamikaze,"At any point during the game, tell another player to drink. That player must drink, but as a noble sacrifice, you must drink with them.",
 52,Mathematician,"Numbers are now banned. Any player who says a number, or even thinks of one, must drink that number of times.",
 53,The Name of Thrones,"All players must be referred to in terms of royalty - King Dave, Queen Jenny, Prince Ass, Princess Ass, etc. Any player who refers to another player without their proper title must drink.",
-54,General,"At any point during the game, shout <i>Incoming!</i> All other players must then duck for cover. The last player to duck must drink.",
+54,Fire in the Hole,"At any point during the game, shout <i>Incoming!</i> All other players must then duck for cover. The last player to duck must drink.",Fire-in-the-Hole.png
 55,Measuring Cup,"Get a 1/4 measuring cup, and pick the player you suspect is not drinking enough per sip. That player must now use the measuring cup every time they drink.",
 56,Gratitude,"After any player drinks, they must thank you. Any player who drinks without showing you some appreciation must drink again.",
