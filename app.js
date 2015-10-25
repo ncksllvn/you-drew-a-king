@@ -8,6 +8,7 @@ var session = require('express-session')
 var uuid = require('node-uuid')
 var constants = require('./constants/locals')
 var captchas = require('./util/captchas')
+var errorHandling = require('./util/error-handling')
 
 var routes = require('./routes/index')
 var rule = require('./routes/rule')
@@ -54,44 +55,6 @@ app.use('/', rule)
 app.use('/search', search)
 app.use('/suggestion', suggestion)
 
-// catch 404 and forward to error handler
-app.use((req, res, next) => {
-  var err = new Error('Not found')
-  err.status = 404
-  next(err)
-})
-
-// error handlers
-
-// DEVELOPMENT ERROR HANDLER
-if (app.get('env') === 'development') {
-  app.use((err, req, res, next) => {
-    
-    res.status(err.status || 500)
-    
-    res.render('error', {
-      message: err.message,
-      status: err.status || '???',
-      stack: err.stack
-    })
-    
-  })
-}
-
-// PRODUCTION ERROR HANDLER
-app.use((err, req, res, next) => {
-  
-  var status = err.status || 500
-  
-  res.status(status)
-
-  res.render('error', {
-    message: status == 404 ? 'Looks like you made a wrong turn.' : 'You broke us!',
-    status: status,
-    stack: '' // no stacktraces leaked to user
-  })
-  
-})
-
+errorHandling(app)
 
 module.exports = app
