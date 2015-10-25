@@ -35,7 +35,7 @@ module.exports = (app) => {
 				message = 'Looks like you made a wrong turn.'
 				break
 			case 503:
-				message = 'Sorry ladies and gents - we\'re down for maintence. Be back up soon.'
+				message = 'Sorry ladies and gents - we\'re down right now. Please try again in a few.'
 				break
 			default:
 				message = 'You broke us!'
