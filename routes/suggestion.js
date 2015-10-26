@@ -55,6 +55,19 @@ router.post('/', (req, res, next) => {
 	
 	Suggestion.create(suggestion).then((suggestion)=>{
 		res.render('suggestion-feedback', meta)
+	}).catch((err)=>{
+		
+		if (err && err.name != 'SequelizeValidationError') 
+			return next(err)
+			
+		var message = err.errors[0].message
+			
+		return res.render('suggestion', Object.assign({
+			captcha: newCaptcha,
+			suggestion: suggestion,
+			message: message
+		}, meta))
+		
 	})
 		
 })

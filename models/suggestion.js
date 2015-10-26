@@ -4,14 +4,20 @@ module.exports = function(sequelize, DataTypes) {
     title: {
       type: DataTypes.STRING,
       validate: {
-         notEmpty: true
+        len: { 
+          args: [3,50],
+          msg: 'Your title should be between 3 and 50 characters.'
+        }
       }
    },
     name: DataTypes.STRING,
     description: {
       type: DataTypes.TEXT,
-      validate: {
-         notEmpty: true
+      validate: { 
+        len: {
+          args: [10,500],
+          msg: 'Your description should be between 10 and 500 characters.'
+        }
       }
     },
     ip: {
