@@ -6,6 +6,9 @@
     "start": "babel-node ./bin/www",
     "postinstall": "gulp release"
   },
+  "engines": {
+    "node": "4.1.2"
+  },
   "dependencies": {
     "ascii-captcha": "0.0.3",
     "babel": "^5.8.21",
