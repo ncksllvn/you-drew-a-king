@@ -18,8 +18,9 @@
 	--sidebarWidth: 200px;
 }
 
-body, .pure-g [class *= "pure-u"]  {
-	color: var(--darkColor);
+html, body, button, input, select, textarea,
+.pure-g [class *= "pure-u"] {
+    color: var(--darkColor);
 	font-family: var(--normalFont);
 }
 
