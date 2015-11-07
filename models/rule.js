@@ -111,11 +111,12 @@ module.exports = function(sequelize, DataTypes) {
       
       findByIdAndRandomNext: (options) => {
         
-        var ruleId = options.id
+        var ruleId = ~~options.id
+        var exclusions = options.exclusions || []    
         
         return sequelize.Promise.join(
           Rule.findById(ruleId),
-          Rule.findRandom({ limit: 1, exclusions: options.exclusions }),
+          Rule.findRandom({ limit: 1, exclusions: exclusions.concat([ruleId]) }),
           function result(rule1, rule2){
             
             rule1.next = rule2[0]
