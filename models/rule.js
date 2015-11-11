@@ -31,17 +31,9 @@ module.exports = function(sequelize, DataTypes) {
       },
       
       descriptionAsPlainText: function(){
+        var description = this.getDataValue('description') || ''
         
-        if (this.getDataValue('cleanDescription'))
-          return this.getDataValue('cleanDescription')
-        
-        var description = this.getDataValue('description')
-        
-        var clean = description.replace(/<\/?[^>]+(>|$)/g, '')
-        
-        this.setDataValue('cleanDescription', clean)
-        
-        return clean
+        return description ? description.replace(/<\/?[^>]+(>|$)/g, '') : ''
       },
       
       encodedPermalink: function(){
