@@ -35,7 +35,7 @@ router.get('/rules', (req, res, next) => {
   
   Rule.findAll({
     attributes: ['id', 'title', 'image'],
-    order: ['title']
+    order: `trim(leading 'The ' from title)`
   }).then((rules) => {
     
     res.render('rules', {
