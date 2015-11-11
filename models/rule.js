@@ -9,6 +9,8 @@ module.exports = function(sequelize, DataTypes) {
     
     description: DataTypes.TEXT,
     
+    submitter: DataTypes.STRING,
+    
     image: {
       type: DataTypes.STRING,
       get: function(){

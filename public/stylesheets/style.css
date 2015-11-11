@@ -186,6 +186,18 @@ input[type="text"], .pure-form input[type="text"]{
 		}
 
 /* =============  /Rule ============= */
+.kings-rule-header {
+	margin-bottom: 25px;
+}
+
+	.kings-rule-header .kings-rule-title {
+		margin-bottom: 0;
+	}
+
+	.kings-rule-header .kings-rule-submitter {
+		margin-top: 5px;
+	}
+	
 .kings-rule {
 	margin: 0 auto;
 }

@@ -1,15 +1,18 @@
 extends layout
 
 block content    
-  .header
-    h1
+  .header.kings-rule-header
+    h1.kings-rule-title
       a(href=rule.permalink)= rule.title
+    if rule.submitter
+        h4.kings-rule-submitter Submitted by #{rule.submitter}
   .content
     .kings-rule
       .image
         img(src=rule.image, alt=rule.title)
       .description
         p !{rule.description}
+      
       .actions
         .share
           .pure-form
