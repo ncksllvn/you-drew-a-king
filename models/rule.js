@@ -23,7 +23,7 @@ module.exports = function(sequelize, DataTypes) {
     getterMethods: {
       
       uri: function() {
-        return '/' + slug(this.title) + '/' + this.id
+        return this.title && '/' + slug(this.title) + '/' + this.id
       },
       
       permalink: function(){
