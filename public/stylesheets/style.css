@@ -18,6 +18,10 @@
 	--sidebarWidth: 200px;
 }
 
+html, body {
+	overflow: hidden;
+}
+
 html, body, button, input, select, textarea,
 .pure-g [class *= "pure-u"] {
     color: var(--darkColor);
