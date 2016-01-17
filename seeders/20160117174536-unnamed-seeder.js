@@ -13,11 +13,7 @@ module.exports = {
       
       submitter: 'Zoey',
       
-      image: 'The-Wave.png',
-      
-      createdAt: new Date(), 
-      
-      updatedAt: new Date()
+      image: 'The-Wave.png'
       
     })
     
