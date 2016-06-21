@@ -1,6 +1,6 @@
 extends layout
 
-block content    
+block content
   .header.kings-rule-header
     h1.kings-rule-title
       a(href=rule.permalink)= rule.title
@@ -12,7 +12,7 @@ block content
         img(src=rule.image, alt=rule.title)
       .description
         p !{rule.description}
-      
+
       .actions
         .share
           .pure-form
@@ -38,13 +38,13 @@ block content
               .l-box
                 a.pure-u-1.pure-button.email(href=rule.emailShareUrl, title='Email to a Friend')
                   span.fa.fa-envelope
-                  
+
         .different-rule
-          a.pure-button.pure-button-primary(href=rule.next && rule.next.uri) Get a different rule 
+          a.pure-button.pure-button-primary(href=rule.next && rule.next.uri) Get a different rule
             span.fa.fa-undo.fa-shift
-            
-      include ./partials/ad.jade
-      
+
+
+
       .facebook-comments-container
         //.fb-like(data-href=rule.permalink, data-width='100%', data-layout='button_count', data-action='like', data-show-faces='true', data-share='true')
         .fb-comments(data-href=rule.permalink, data-numposts=5, data-width='100%')
