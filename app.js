@@ -32,7 +32,7 @@ app.use(cookieParser())
 app.use(session({
   resave: false,
   saveUninitialized: false,
-  secret: '$P1d3RM@nspID%&m*^n',
+  secret: app.locals.sessionSecret,
   genId: (req) => {
     return uuid.v1()
   }
@@ -42,11 +42,11 @@ app.use(express.static(path.join(__dirname, 'public')))
 
 app.use((req, res, next) => {
   var session = req.session
-  
+
   if (!session.captchaId){
     session.captchaId = captchas.random().id
   }
-  
+
   next()
 })
 

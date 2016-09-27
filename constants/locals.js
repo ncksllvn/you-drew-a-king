@@ -4,6 +4,7 @@ module.exports = ()=>{
 		siteLogo: '/images/logo.png',
 		siteLogoSvg: '/images/logo.svg',
 		siteDescription: 'All of the best rules to play during Kings, King\'s Cup, Circle of Death, Ring of Fire and Sociables.',
+		sessionSecret: process.env.SECRET || 'local',
 		facebookAppId: (function(){
 			switch(process.env.NODE_ENV){
 				case 'staging':
