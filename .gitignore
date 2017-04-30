@@ -34,3 +34,5 @@ public/build
 public/dist
 
 public/components
+
+.vscode
